@@ -1,0 +1,41 @@
+.main-content {
+  padding: 40px 20px;
+
+  &__intro {
+    text-align: center;
+  }
+
+  &__products {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 40px;
+    flex-wrap: wrap; // Подготовим к адаптивности
+
+    @include respond-to(mobile) {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  &__about-us {
+    margin-top: 60px;
+    text-align: center;
+  }
+
+  // Адаптивность для планшетов и мобильных
+  @include respond-to(mobile) {
+    padding: 20px 10px;
+  }
+
+  @include respond-to(tablet) {
+    &__intro {
+      h1 {
+        font-size: 2.5rem;
+      }
+    }
+
+    &__products {
+      justify-content: center;
+    }
+  }
+}

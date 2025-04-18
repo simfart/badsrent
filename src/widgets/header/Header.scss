@@ -1,0 +1,61 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  background-color: #333;
+  color: white;
+
+  &__logo img {
+    width: 150px;
+  }
+
+  &__nav ul {
+    list-style: none;
+    display: flex;
+  }
+
+  &__nav li {
+    margin-right: 20px;
+  }
+
+  &__nav a {
+    color: white;
+    text-decoration: none;
+  }
+
+  // Адаптивность для мобильных и планшетов
+  @include respond-to(mobile) {
+    flex-direction: column;
+    align-items: center;
+
+    &__logo img {
+      width: 120px;
+    }
+
+    &__nav ul {
+      flex-direction: column;
+      margin-top: 10px;
+    }
+
+    &__nav li {
+      margin-bottom: 10px;
+    }
+  }
+
+  @include respond-to(tablet) {
+    flex-direction: row;
+    justify-content: space-between;
+    &__logo img {
+      width: 130px;
+    }
+
+    &__nav ul {
+      flex-direction: row;
+      margin-top: 0;
+    }
+
+    &__nav li {
+      margin-right: 15px;
+    }
+  }
+}
