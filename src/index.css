@@ -1,4 +1,7 @@
+@import url('./shared/assets/fonts/fonts.module.css');
+
 :root {
+  
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
@@ -23,6 +26,10 @@ a:hover {
 }
 
 body {
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-style: normal;
+  font-size: 14px;
+  color: #252B42;
   margin: 0;
   display: flex;
   place-items: center;

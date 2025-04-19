@@ -1,0 +1,119 @@
+.aboutUs {
+  display: flex;
+  flex-direction: column;
+
+  // Адаптивность для мобильных и планшетов
+  @include respond-to(mobile) {
+    h2 {
+      font-size: 1.8rem;
+    }
+
+    p {
+      font-size: 1rem;
+    }
+  }
+
+  @include respond-to(tablet) {
+    h2 {
+      font-size: 1.9rem;
+    }
+
+    p {
+      font-size: 1.05rem;
+    }
+  }
+}
+
+.aboutUsTitle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  margin: 160px 0;
+}
+.imgSection {
+  position: relative;
+  width: 50%;
+
+  .imgPict {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+  }
+
+  .imgVector {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    width: 100%;
+  }
+
+  .imgPhoto {
+    position: relative;
+    z-index: 3;
+    width: 100%;
+  }
+}
+
+.aboutUsContent {
+  width: 50%;
+  text-align: left;
+  padding-right: 36px;
+  max-width: 686px;
+  h2 {
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 50px;
+    letter-spacing: 0.2px;
+    margin-bottom: 35px;
+  }
+
+  p {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0.2px;
+    color: #737373;
+  }
+}
+
+.whyUs {
+  h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    text-align: left;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    li {
+      position: relative;
+      padding-left: 1.5rem;
+      margin-bottom: 1rem;
+      font-size: 1.1rem;
+      line-height: 1.6;
+      text-align: left;
+
+      &::before {
+        content: '✔';
+        position: absolute;
+        left: 0;
+        top: 0.2rem;
+        color: #4caf50; // зелёная галочка
+        font-size: 1rem;
+      }
+
+      strong {
+        display: block;
+        font-weight: 600;
+        margin-bottom: 0.3rem;
+      }
+    }
+  }
+}

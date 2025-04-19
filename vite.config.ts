@@ -18,7 +18,7 @@ export default defineConfig({
       },
     },
   },
-  base: '/badsrent/',
+  base: '/',
   resolve: {
     alias: {
       app: path.resolve(__dirname, './src/app'),

@@ -1,25 +1,41 @@
 import { FC } from 'react';
-import './Header.scss';
+import { logoIcon } from 'shared/assets/images';
+import styles from './Header.module.scss';
 
 const Header: FC = () => {
+  const scrollToSection = (id: string) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
-    <header className="header">
-      <div className="header__logo">
-        <img src="/logo.png" alt="Логотип" />
+    <header className={styles.header}>
+      <div className={styles.headerContent}>
+        <div className={styles.logo}>
+          <img src={logoIcon} alt="Логотип" />
+          <div className={styles['logo-title']}>МедЮг АРЕНДА</div>
+        </div>
+
+        <nav className={styles.menu}>
+          <ul>
+            <li>
+              <button onClick={() => scrollToSection('main')}>Главная</button>
+            </li>
+            <li>
+              <button onClick={() => scrollToSection('about-us')}>О нас</button>
+            </li>
+            <li>
+              <button onClick={() => scrollToSection('products')}>
+                Каталог аренды
+              </button>
+            </li>
+          </ul>
+        </nav>
       </div>
-      <nav className="header__nav">
-        <ul>
-          <li>
-            <a href="#main">Главная</a>
-          </li>
-          <li>
-            <a href="#products">Продукты</a>
-          </li>
-          <li>
-            <a href="#contacts">Контакты</a>
-          </li>
-        </ul>
-      </nav>
+
+      <button className={styles.contact}>8 978 091 74 10</button>
     </header>
   );
 };
