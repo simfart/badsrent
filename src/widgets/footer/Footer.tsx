@@ -1,12 +1,28 @@
 import { FC } from 'react';
-import './Footer.scss';
+import styles from './Footer.module.scss';
+import { mailIcon, phoneIcon, telegramIcon } from 'shared/assets/images';
 
 export const Footer: FC = () => {
   return (
-    <footer className="footer" id="contacts">
-      <div className="footer__contact">
-        <p>Email: contact@example.com</p>
-        <p>Телефон: +7 (123) 456-78-90</p>
+    <footer className={styles.footer} id="contacts">
+      <div className={styles.contacts}>
+        <a href="tel:+71234567890" className={styles.contactItem}>
+          <img src={phoneIcon} alt="Phone" />
+          <span>+7 (978) 091-74-10</span>
+        </a>
+        <a href="mailto:example@example.com" className={styles.contactItem}>
+          <img src={mailIcon} alt="Email" />
+          <span>example@example.com</span>
+        </a>
+        <a
+          href="https://t.me/arenda_trenazherov_crimea"
+          className={styles.contactItem}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img src={telegramIcon} alt="Telegram" />
+          <span>@arenda_trenazherov_crimea</span>
+        </a>
       </div>
     </footer>
   );

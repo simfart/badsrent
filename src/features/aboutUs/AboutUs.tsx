@@ -4,12 +4,11 @@ import { outputBad, RectangImg, vectorImg } from 'shared/assets/images';
 
 export const AboutUs: FC = () => {
   return (
-    <section className={styles.aboutUs}>
-      <div className={styles.aboutUsTitle}>
+    <section id="about-us" className={styles.aboutUs}>
+      <div className={styles.aboutUsMain}>
         <div className={styles.imgSection}>
           <img className={styles.imgPict} src={RectangImg} alt="Вектор" />
           <img className={styles.imgVector} src={vectorImg} alt="Вектор" />
-          <img src="" alt="" />
           <img
             className={styles.imgPhoto}
             src={outputBad}
@@ -42,19 +41,14 @@ export const AboutUs: FC = () => {
             проверенными поставщиками.
           </li>
           <li>
-            <strong>Гибкие условия аренды.</strong> Хотите взять кровать на
-            неделю или на несколько месяцев? Мы подберём для вас удобный
-            вариант.
-          </li>
-          <li>
             <strong>Оперативная доставка и установка.</strong> Мы понимаем, что
             в вопросах ухода важна каждая минута, поэтому доставляем
             оборудование максимально быстро и аккуратно.
           </li>
           <li>
-            <strong>Человечный подход.</strong> Для нас важно не просто сдать
-            оборудование в аренду — мы стремимся стать вашей опорой в трудный
-            момент.
+            <strong>Работаем по всему Крыму!</strong> Доставим и установим
+            оборудование в любой населённый пункт региона — быстро, аккуратно и
+            без лишних хлопот. Где бы вы ни находились, помощь будет рядом.
           </li>
         </ul>
         <p></p>

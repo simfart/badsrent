@@ -17,7 +17,7 @@ export const MainContent: FC = () => {
               <section id="main" className={styles.mainContent__intro}>
                 <h3>Комфорт и Забота рядом с вами!</h3>
                 <h1>Медицинские кровати на дом</h1>
-                <p>
+                <p className={styles.mainAbout}>
                   Профессиональные решения для комфортного и эффективного
                   восстановления дома. Мы предоставляем оборудование и поддержку
                   для людей, нуждающихся в реабилитации после операции, травм
@@ -25,14 +25,9 @@ export const MainContent: FC = () => {
                 </p>
               </section>
 
-              <section id="about-us" className="main-content__about-us">
-                <AboutUs />
-              </section>
+              <AboutUs />
 
-              <section id="products" className="main-content__products">
-                <h2>Наши продукты</h2>
-                <ProductList />
-              </section>
+              <ProductList />
             </>
           }
         />

@@ -3,11 +3,13 @@ import { bad1Img } from 'shared/assets/images';
 export const products = [
   {
     id: 1,
-    name: 'Продукт 1',
-    description: 'Краткое описание продукта 1',
+    name: 'Кровать медицинская MET Revel XL 15198',
+    description:
+      'Функциональная кровать с электроприводными регулировками положения секций, туалетным устройством и электрифицированной функцией переворачивания с таймером для автоматической смены положения в ночное время.',
     fullDescription:
       'Полное описание продукта 1. Тут может быть длинное описание.',
     image: bad1Img,
+    price: 2999,
   },
   {
     id: 2,
@@ -15,6 +17,7 @@ export const products = [
     description: 'Краткое описание продукта 2',
     fullDescription: 'Полное описание продукта 2.',
     image: bad1Img,
+    price: 3000,
   },
   {
     id: 3,
@@ -22,6 +25,7 @@ export const products = [
     description: 'Краткое описание продукта 2',
     fullDescription: 'Полное описание продукта 2.',
     image: bad1Img,
+    price: 3000,
   },
   {
     id: 4,
@@ -29,6 +33,7 @@ export const products = [
     description: 'Краткое описание продукта 2',
     fullDescription: 'Полное описание продукта 2.',
     image: bad1Img,
+    price: 3000,
   },
   {
     id: 5,
@@ -36,6 +41,7 @@ export const products = [
     description: 'Краткое описание продукта 2',
     fullDescription: 'Полное описание продукта 2.',
     image: bad1Img,
+    price: 3000,
   },
   {
     id: 6,
@@ -43,6 +49,7 @@ export const products = [
     description: 'Краткое описание продукта 2',
     fullDescription: 'Полное описание продукта 2.',
     image: bad1Img,
+    price: 3000,
   },
   {
     id: 7,
@@ -50,5 +57,6 @@ export const products = [
     description: 'Краткое описание продукта 2',
     fullDescription: 'Полное описание продукта 2.',
     image: bad1Img,
+    price: 3000,
   },
 ];
