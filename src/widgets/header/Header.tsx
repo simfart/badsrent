@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { logoIcon } from 'shared/assets/images';
+import { logoIcon, phoneLightIcon } from 'shared/assets/images';
 import styles from './Header.module.scss';
 
 const Header: FC = () => {
@@ -35,7 +35,11 @@ const Header: FC = () => {
         </nav>
       </div>
 
-      <button className={styles.contact}>8 978 091 74 10</button>
+      <a href="tel:+79780917410">
+        <button className={styles.contact}>
+          <img src={phoneLightIcon} alt="Позвонить" /> 8 978 091 74 10
+        </button>
+      </a>
     </header>
   );
 };
