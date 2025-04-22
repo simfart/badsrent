@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { logoIcon, phoneLightIcon } from 'shared/assets/images';
+import { logoImg, phoneLightIcon } from 'shared/assets/images';
 import styles from './Header.module.scss';
 
 const Header: FC = () => {
@@ -14,7 +14,7 @@ const Header: FC = () => {
     <header className={styles.header}>
       <div className={styles.headerContent}>
         <div className={styles.logo}>
-          <img src={logoIcon} alt="Логотип" />
+          <img src={logoImg} alt="Логотип" />
           <div className={styles['logo-title']}>МедЮг АРЕНДА</div>
         </div>
 

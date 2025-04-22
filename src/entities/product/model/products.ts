@@ -1,62 +1,52 @@
-import { bad1Img } from 'shared/assets/images';
+import {
+  medBad1Img,
+  medBad2Img,
+  medBad3Img,
+  medBad4Img,
+  medRev1Img,
+  medRev2Img,
+  medRev3Img,
+  medRev4Img,
+  medRev5Img,
+  medRev6Img,
+  medRev7Img,
+  medRev8Img,
+  medRev9Img,
+} from 'shared/assets/images';
+import { Product } from 'shared/assets/types/product';
 
-export const products = [
+export const products: Product[] = [
   {
     id: 1,
-    name: 'Кровать медицинская MET Revel XL 15198',
+    name: 'Многофункциональная кровать с электроприводом',
+    price: '3 999 ₽ / мес',
     description:
-      'Функциональная кровать с электроприводными регулировками положения секций, туалетным устройством и электрифицированной функцией переворачивания с таймером для автоматической смены положения в ночное время.',
-    fullDescription:
-      'Полное описание продукта 1. Тут может быть длинное описание.',
-    image: bad1Img,
-    price: 2999,
+      'Идеальный выбор для ухода за пациентами с ограниченной мобильностью. Кровать оснащена функцией трансформации в кресло, электропереворотом и пультом для регулировки положения тела. Включает туалетное устройство с электроуправлением, складные боковые ограждения, штангу для подтягивания и инфузионную стойку. Удобное решение для комфортного ухода и профилактики пролежней. Максимальная нагрузка — 200 кг',
+    media: [
+      { type: 'image', src: medBad1Img },
+      { type: 'image', src: medBad2Img },
+      { type: 'image', src: medBad3Img },
+      { type: 'image', src: medBad4Img },
+    ],
   },
   {
     id: 2,
-    name: 'Продукт 2',
-    description: 'Краткое описание продукта 2',
-    fullDescription: 'Полное описание продукта 2.',
-    image: bad1Img,
-    price: 3000,
-  },
-  {
-    id: 3,
-    name: 'Продукт 2',
-    description: 'Краткое описание продукта 2',
-    fullDescription: 'Полное описание продукта 2.',
-    image: bad1Img,
-    price: 3000,
-  },
-  {
-    id: 4,
-    name: 'Продукт 2',
-    description: 'Краткое описание продукта 2',
-    fullDescription: 'Полное описание продукта 2.',
-    image: bad1Img,
-    price: 3000,
-  },
-  {
-    id: 5,
-    name: 'Продукт 2',
-    description: 'Краткое описание продукта 2',
-    fullDescription: 'Полное описание продукта 2.',
-    image: bad1Img,
-    price: 3000,
-  },
-  {
-    id: 6,
-    name: 'Продукт 2',
-    description: 'Краткое описание продукта 2',
-    fullDescription: 'Полное описание продукта 2.',
-    image: bad1Img,
-    price: 3000,
-  },
-  {
-    id: 7,
-    name: 'Продукт 2',
-    description: 'Краткое описание продукта 2',
-    fullDescription: 'Полное описание продукта 2.',
-    image: bad1Img,
-    price: 3000,
+    name: 'Акустика JBL PartyBox',
+    price: '3 200 ₽ / мес',
+    description:
+      'Громкий звук, Bluetooth, светомузыка — идеален для вечеринок.',
+    media: [
+      { type: 'image', src: medRev1Img },
+      { type: 'image', src: medRev2Img },
+      { type: 'image', src: medRev3Img },
+      { type: 'image', src: medRev4Img },
+      { type: 'image', src: medRev5Img },
+      { type: 'image', src: medRev6Img },
+      { type: 'image', src: medRev7Img },
+      { type: 'image', src: medRev8Img },
+      { type: 'image', src: medRev9Img },
+
+      // { type: 'video', src: '/videos/speaker-demo.mp4' },
+    ],
   },
 ];
