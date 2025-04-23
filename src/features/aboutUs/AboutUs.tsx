@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import styles from './AboutUs.module.scss';
-import { outputBad, RectangImg, vectorImg } from 'shared/assets/images';
+import { manImg, RectangImg, vectorImg } from 'shared/assets/images';
 
 export const AboutUs: FC = () => {
   return (
@@ -11,7 +11,7 @@ export const AboutUs: FC = () => {
           <img className={styles.imgVector} src={vectorImg} alt="Вектор" />
           <img
             className={styles.imgPhoto}
-            src={outputBad}
+            src={manImg}
             alt="Медицинская кровать"
           />
         </div>

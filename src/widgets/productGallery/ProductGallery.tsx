@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useSwipeable } from 'react-swipeable';
 import styles from './ProductGallery.module.scss';
 import { Product } from 'shared/assets/types/product';
 
@@ -24,6 +25,13 @@ export const ProductGallery: React.FC<Props> = ({ product }) => {
     );
   };
 
+  const swipeHandlers = useSwipeable({
+    onSwipedLeft: handleNext,
+    onSwipedRight: handlePrev,
+    trackMouse: true,
+    touchEventOptions: { passive: false },
+  });
+
   return (
     <div className={styles.galleryContainer}>
       <div className={styles.thumbnailList}>
@@ -38,7 +46,7 @@ export const ProductGallery: React.FC<Props> = ({ product }) => {
               onClick={() => handleChange(index)}
             >
               {item.type === 'image' ? (
-                <img src={item.src} className={styles.thumbnail} />
+                <img src={item.src} className={styles.thumbnail} alt="" />
               ) : (
                 <video src={item.src} className={styles.thumbnail} muted />
               )}
@@ -51,9 +59,9 @@ export const ProductGallery: React.FC<Props> = ({ product }) => {
         <button onClick={handlePrev} className={styles.navButton}>
           ‹
         </button>
-        <div className={styles.mediaWrapper} onClick={handleNext}>
+        <div {...swipeHandlers} className={styles.mediaWrapper}>
           {currentMedia.type === 'image' ? (
-            <img src={currentMedia.src} className={styles.mainMedia} />
+            <img src={currentMedia.src} className={styles.mainMedia} alt="" />
           ) : (
             <video
               src={currentMedia.src}
@@ -68,7 +76,7 @@ export const ProductGallery: React.FC<Props> = ({ product }) => {
       </div>
 
       <div className={styles.infoPanel}>
-        <h2>{product.name}</h2>
+        <h3>{product.name}</h3>
         <div className={styles.price}>{product.price}</div>
         <p>{product.description}</p>
       </div>

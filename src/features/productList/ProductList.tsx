@@ -5,8 +5,9 @@ import { ProductGallery } from 'widgets/productGallery';
 
 export const ProductList: React.FC = () => (
   <section id="products" className={styles.products}>
-    <h2>Каталог аренды</h2>
-    <div>
+    <span>Кровати, которые помогают заботиться</span>
+    <h2>Решения для ухода</h2>
+    <div className={styles.productsContainer}>
       {products.map((p) => (
         <ProductGallery key={p.id} product={p} />
       ))}

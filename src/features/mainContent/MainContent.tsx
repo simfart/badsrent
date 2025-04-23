@@ -15,7 +15,9 @@ export const MainContent: FC = () => {
           element={
             <>
               <section id="main" className={styles.mainContent__intro}>
-                <h3>Аренда и доставка по всему Крыму</h3>
+                <span className={styles.mainSubtitle}>
+                  Аренда и доставка по всему Крыму
+                </span>
                 <h1>Медицинские кровати на дом</h1>
                 <p className={styles.mainAbout}>
                   Профессиональные решения для комфортного и эффективного

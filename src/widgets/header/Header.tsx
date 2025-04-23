@@ -28,7 +28,7 @@ const Header: FC = () => {
             </li>
             <li>
               <button onClick={() => scrollToSection('products')}>
-                Каталог аренды
+                Выбор кровати
               </button>
             </li>
           </ul>

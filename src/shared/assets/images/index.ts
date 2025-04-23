@@ -1,5 +1,4 @@
 import logoIcon from './logo.png';
-import outputBad from './output.png';
 import RectangImg from './Rectangle.png';
 import vectorImg from './Vector.png';
 import phoneIcon from './phone.svg';
@@ -20,10 +19,10 @@ import medRev6Img from './med-rev6.jpg';
 import medRev7Img from './med-rev7.jpg';
 import medRev8Img from './med-rev8.jpg';
 import medRev9Img from './med-rev9.jpg';
-
+import manImg from './man.png';
 export {
   logoIcon,
-  outputBad,
+  manImg,
   RectangImg,
   vectorImg,
   mailIcon,
