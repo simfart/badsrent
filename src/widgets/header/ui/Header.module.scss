@@ -3,17 +3,38 @@
   padding: 16px;
   z-index: 100;
 
+  @include respond-to(mobile) {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 10px;
+  }
+
   .headerContent {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     align-items: center;
-    width: 100%;
+    gap: 10px;
+
+    @include respond-to(tablet) {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    @include respond-to(desktop) {
+      flex-direction: row;
+      justify-content: space-between;
+    }
   }
 
   .headerContainer {
     display: flex;
     align-items: center;
     width: 100%;
+
+    @include respond-to(tablet) {
+      width: auto;
+    }
   }
 
   .logo {
@@ -27,6 +48,10 @@
         height: 43px;
         margin-left: 10px;
       }
+      @include respond-to(mobile) {
+        height: 30px;
+        margin: 0;
+      }
     }
 
     &-title {
@@ -39,6 +64,11 @@
       @include respond-to(tablet) {
         font-size: 16px;
         max-width: 80px;
+      }
+      @include respond-to(mobile) {
+        font-size: 12px;
+        max-width: 60px;
+        margin-left: 0;
       }
     }
   }
@@ -68,7 +98,7 @@
     }
 
     &.active span:nth-child(3) {
-      transform: rotate(-45deg) translate(5px, -5px);
+      transform: rotate(-45deg) translate(7px, -7px);
     }
 
     @include respond-to(tablet) {
@@ -88,12 +118,21 @@
     color: #fff;
     border: none;
     white-space: nowrap;
+
     @include respond-to(tablet) {
       padding: 10px 15px;
       font-size: 14px;
       img {
         width: 20px;
         height: 20px;
+      }
+
+      @include respond-to(mobile) {
+        font-size: 12px;
+        img {
+          width: 15px;
+          height: 15px;
+        }
       }
     }
   }
@@ -113,12 +152,12 @@
   .sideMenu {
     position: fixed;
     top: 0;
-    left: 0;
+    right: 0;
     height: 100vh;
     width: 250px;
     background: white;
-    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
-    transform: translateX(-100%);
+    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+    transform: translateX(100%);
     transition: transform 0.3s ease;
     z-index: 1000;
     padding: 40px 20px;
@@ -127,16 +166,23 @@
     @include respond-to(tablet) {
       display: block;
     }
+    @include respond-to(mobile) {
+      width: 150px;
+      padding: 20px 10px;
+    }
 
     ul {
       list-style: none;
       padding: 0;
-
       li {
         margin: 20px 0;
         opacity: 0;
-        transform: translateX(-20px);
+        transform: translateX(20px);
         animation: slideIn 0.4s forwards;
+      }
+      @include respond-to(mobile) {
+        width: 150px;
+        padding: 20px 10px;
       }
     }
 
@@ -151,6 +197,12 @@
       &:hover {
         color: #8d5cf6;
       }
+      &:focus {
+        outline: none;
+      }
+      @include respond-to(mobile) {
+        font-size: 12px;
+      }
     }
   }
 
@@ -160,19 +212,24 @@
 
   .desktopMenu {
     display: flex;
+    margin-left: 41px;
 
     @include respond-to(tablet) {
       display: none;
     }
+
     ul {
       list-style: none;
       gap: 21px;
       display: flex;
+      padding: 0;
+      margin: 0;
     }
 
     li {
       gap: 21px;
     }
+
     button {
       background: none;
       border: none;

@@ -20,10 +20,12 @@ export const Header: FC = () => {
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
+      const target = event.target as HTMLElement;
+
       if (
         menuRef.current &&
-        !menuRef.current.contains(event.target as Node) &&
-        !(event.target as HTMLElement).closest(`.${styles.burger}`)
+        !menuRef.current.contains(target) &&
+        !target.closest('[data-burger]')
       ) {
         setMenuOpen(false);
       }
@@ -38,23 +40,12 @@ export const Header: FC = () => {
   return (
     <header className={styles.header}>
       <div className={styles.headerContent}>
-        {/* Контейнер с логотипом и меню */}
         <div className={styles.headerContainer}>
-          {/* Бургер кнопка */}
-          <div
-            className={`${styles.burger} ${menuOpen ? styles.active : ''}`}
-            onClick={() => setMenuOpen((prev) => !prev)}
-          >
-            <span></span>
-            <span></span>
-            <span></span>
-          </div>
           <div className={styles.logo}>
             <img src={logoImg} alt="Логотип" />
             <div className={styles['logo-title']}>МедЮг АРЕНДА</div>
           </div>
 
-          {/* Основное меню для десктопов */}
           <nav className={styles.desktopMenu}>
             <ul>
               <li>
@@ -72,18 +63,29 @@ export const Header: FC = () => {
           </nav>
         </div>
 
-        {/* Контактная информация */}
         <a href="tel:+79780917410">
           <button className={styles.contact}>
             <img src={phoneLightIcon} alt="Позвонить" /> 8 978 091 74 10
           </button>
         </a>
+
+        {/* Бургер-кнопка */}
+        <div
+          className={`${styles.burger} ${menuOpen ? styles.active : ''}`}
+          data-burger
+          onClick={(e) => {
+            e.stopPropagation();
+            setMenuOpen((prev) => !prev);
+          }}
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
       </div>
 
-      {/* Затемнение фона */}
       {menuOpen && <div className={styles.overlay}></div>}
 
-      {/* Сайд-меню (бургер-меню для мобильных и планшетов) */}
       <div
         ref={menuRef}
         className={`${styles.sideMenu} ${menuOpen ? styles.open : ''}`}
