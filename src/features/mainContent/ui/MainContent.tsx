@@ -14,12 +14,10 @@ export const MainContent: FC = () => {
           path="/"
           element={
             <>
-              <section id="main" className={styles.mainContent__intro}>
-                <span className={styles.mainSubtitle}>
-                  Аренда и доставка по всему Крыму
-                </span>
+              <section id="main" className={styles.mainContentIntro}>
+                <span>Аренда и доставка по всему Крыму</span>
                 <h1>Медицинские кровати на дом</h1>
-                <p className={styles.mainAbout}>
+                <p>
                   Профессиональные решения для комфортного и эффективного
                   восстановления дома. Мы предоставляем оборудование и поддержку
                   для людей, нуждающихся в реабилитации после операции, травм
