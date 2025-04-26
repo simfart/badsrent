@@ -14,7 +14,7 @@
 }
 
 .mainContentIntro {
-  margin: 112px 0;
+  margin: 80px 0;
   max-width: 686px;
   display: flex;
   align-items: center;
@@ -75,6 +75,24 @@
     }
     @include respond-to(mobile) {
       font-size: 14px;
+    }
+  }
+
+  ul {
+    font-weight: 700;
+    font-size: 35px;
+    line-height: 150%;
+    letter-spacing: 0.2px;
+    // list-style: none;
+    padding: 0;
+    margin-top: 0;
+
+    li {
+      font-weight: 400;
+      font-size: 20px;
+      line-height: 150%;
+      text-align: left;
+      color: #737373;
     }
   }
 }

@@ -63,9 +63,9 @@ export const Header: FC = () => {
           </nav>
         </div>
 
-        <a href="tel:+79780917410">
+        <a href="tel:+79789410960">
           <button className={styles.contact}>
-            <img src={phoneLightIcon} alt="Позвонить" /> 8 978 091 74 10
+            <img src={phoneLightIcon} alt="Позвонить" /> 8 978 941 06 90
           </button>
         </a>
 

@@ -1,4 +1,3 @@
-import logoIcon from './logo.png';
 import RectangImg from './Rectangle.png';
 import vectorImg from './Vector.png';
 import phoneIcon from './phone.svg';
@@ -26,7 +25,6 @@ import dropDownIcon from './drop-down.svg';
 
 export {
   dropDownIcon,
-  logoIcon,
   manImg,
   RectangImg,
   vectorImg,
