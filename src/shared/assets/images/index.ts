@@ -19,8 +19,11 @@ import medRev6Img from './med-rev6.jpg';
 import medRev7Img from './med-rev7.jpg';
 import medRev8Img from './med-rev8.jpg';
 import medRev9Img from './med-rev9.jpg';
+import medRev10Img from './met-revel-l-2-1200x1200.jpg';
+import medRev11Img from './met-revel-l-3-1200x1200.jpg';
 import manImg from './man.png';
 import dropDownIcon from './drop-down.svg';
+
 export {
   dropDownIcon,
   logoIcon,
@@ -45,4 +48,6 @@ export {
   medRev7Img,
   medRev8Img,
   medRev9Img,
+  medRev10Img,
+  medRev11Img,
 };
