@@ -13,5 +13,9 @@
     @media (max-width: $desktop-breakpoint) {
       @content;
     }
+  } @else if $breakpoint == midDesktop {
+    @media (max-width: $mid-desktop-breakpoint) {
+      @content;
+    }
   }
 }

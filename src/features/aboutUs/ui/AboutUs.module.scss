@@ -1,27 +1,6 @@
 .aboutUs {
   display: flex;
   flex-direction: column;
-
-  // Адаптивность для мобильных и планшетов
-  @include respond-to(mobile) {
-    h2 {
-      font-size: 1.8rem;
-    }
-
-    p {
-      font-size: 1rem;
-    }
-  }
-
-  @include respond-to(tablet) {
-    h2 {
-      font-size: 1.9rem;
-    }
-
-    p {
-      font-size: 1.05rem;
-    }
-  }
 }
 
 .aboutUsMain {
@@ -34,7 +13,7 @@
 .imgSection {
   position: relative;
   width: 50%;
-  max-width: 444px;
+  overflow: hidden;
 
   .imgPict {
     position: absolute;
@@ -63,19 +42,30 @@
   width: 50%;
   text-align: left;
   max-width: 686px;
+
+  @include respond-to(midDesktop) {
+    max-width: 500px;
+  }
   h2 {
     font-weight: 700;
     font-size: 40px;
     line-height: 50px;
     letter-spacing: 0.2px;
     margin-bottom: 35px;
+    @include respond-to(midDesktop) {
+      margin-bottom: 20px;
+    }
   }
+
   p {
     font-weight: 400;
     font-size: 20px;
-    line-height: 30px;
+    line-height: 150%;
     letter-spacing: 0.2px;
     color: #737373;
+    @include respond-to(midDesktop) {
+      font-size: 14px;
+    }
   }
 }
 
@@ -88,6 +78,12 @@
     color: #8d5cf6;
     text-align: left;
     margin-bottom: 35px;
+    @include respond-to(tablet) {
+      font-size: 18px;
+    }
+    @include respond-to(mobile) {
+      font-size: 14px;
+    }
   }
 
   ul {
@@ -120,6 +116,12 @@
         font-weight: 600;
         margin-bottom: 0.3rem;
         color: #252b42;
+      }
+      @include respond-to(tablet) {
+        font-size: 16px;
+      }
+      @include respond-to(mobile) {
+        font-size: 14px;
       }
     }
   }

@@ -13,6 +13,13 @@
     align-items: center;
     padding: 16px;
   }
+
+  // Добавляем медиазапрос для разрешения 1042px и ниже
+  @media (max-width: 1042px) {
+    flex-direction: column;
+    align-items: center;
+    padding: 16px;
+  }
 }
 
 .thumbnailList {
@@ -27,7 +34,7 @@
   scroll-behavior: smooth;
   -webkit-overflow-scrolling: touch;
 
-  @include respond-to(mobile) {
+  @include respond-to(tablet) {
     flex-direction: row;
     flex-wrap: nowrap;
     width: 100%;
@@ -62,7 +69,7 @@
   &.active,
   &:hover {
     opacity: 1;
-    border: 2px solid #8d5cf6;
+    border: 2px solid #8d5cf665;
   }
 
   img,
@@ -73,7 +80,7 @@
     display: block;
   }
 
-  @include respond-to(mobile) {
+  @include respond-to(tablet) {
     height: 70px;
     width: 70px;
   }
@@ -84,7 +91,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #000;
   border-radius: 12px;
   overflow: hidden;
   margin: 0 20px;
@@ -94,6 +100,7 @@
     margin: 0;
   }
 }
+
 .mediaWrapper {
   width: 100%;
   display: flex;
@@ -138,6 +145,7 @@
     outline: none;
   }
 }
+
 .infoPanel {
   flex: 1;
   max-width: 700px;
@@ -179,5 +187,15 @@
     line-height: 133%;
     letter-spacing: 0.2px;
     color: #737373;
+  }
+}
+
+.productsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+
+  @media (max-width: 1042px) {
+    justify-content: center; // Центрирование карточек при разрешении 1042px и меньше
   }
 }
