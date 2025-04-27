@@ -10,18 +10,18 @@ export const Footer: FC = () => {
           <img src={phoneIcon} alt="Phone" />
           <span>+7 (978) 941-09-60</span>
         </a>
-        <a href="mailto:example@example.com" className={styles.contactItem}>
+        <a href="mailto:arendamed82@yandex.ru" className={styles.contactItem}>
           <img src={mailIcon} alt="Email" />
-          <span>example@example.com</span>
+          <span>arendamed82@yandex.ru</span>
         </a>
         <a
-          href="https://t.me/arenda_trenazherov_crimea"
+          href="https://t.me/rental_honey_bed"
           className={styles.contactItem}
           target="_blank"
           rel="noopener noreferrer"
         >
           <img src={telegramIcon} alt="Telegram" />
-          <span>@arenda_trenazherov_crimea</span>
+          <span>@rental_honey_bed</span>
         </a>
       </div>
     </footer>
