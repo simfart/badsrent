@@ -48,7 +48,7 @@
         margin-left: 10px;
       }
       @include respond-to(mobile) {
-        height: 30px;
+        height: 40px;
         margin: 0;
       }
     }
@@ -59,14 +59,14 @@
       margin-left: 10px;
       max-width: 120px;
       line-height: 120%;
-      color: #8d5cf6;
+      color: #8350e5;
 
       @include respond-to(tablet) {
         font-size: 16px;
         max-width: 80px;
       }
       @include respond-to(mobile) {
-        font-size: 12px;
+        font-size: 14px;
         max-width: 60px;
         margin-left: 0;
       }
@@ -129,6 +129,8 @@
 
       @include respond-to(mobile) {
         font-size: 12px;
+        gap: 5px;
+
         img {
           width: 15px;
           height: 15px;
@@ -154,7 +156,7 @@
     top: 0;
     right: 0;
     height: 100vh;
-    width: 250px;
+    width: 60%;
     background: white;
     box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
     transform: translateX(100%);
@@ -167,13 +169,13 @@
       display: block;
     }
     @include respond-to(mobile) {
-      width: 150px;
-      padding: 20px 10px;
+      // padding: 20px 10px;
     }
 
     ul {
       list-style: none;
       padding: 0;
+
       li {
         margin: 20px 0;
         opacity: 0;
@@ -181,7 +183,6 @@
         animation: slideIn 0.4s forwards;
       }
       @include respond-to(mobile) {
-        width: 150px;
         padding: 20px 10px;
       }
     }
@@ -201,7 +202,7 @@
         outline: none;
       }
       @include respond-to(mobile) {
-        font-size: 12px;
+        font-size: 14px;
       }
     }
   }

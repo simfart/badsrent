@@ -10,13 +10,13 @@
   gap: 2rem;
   margin-bottom: 112px;
   @include respond-to(tablet) {
-    flex-direction: column; // Строим в колонку
+    flex-direction: column;
+    margin-bottom: 60px;
   }
-  // display: flex;
-  // justify-content: space-between;
-  // align-items: center;
-  // gap: 2rem;
-  // margin-bottom: 112px;
+  @include respond-to(mobile) {
+    flex-direction: column;
+    margin-bottom: 40px;
+  }
 }
 .imgSection {
   position: relative;
@@ -79,7 +79,7 @@
     letter-spacing: 0.2px;
     color: #737373;
     @include respond-to(midDesktop) {
-      font-size: 14px;
+      font-size: 16px;
     }
   }
 }
@@ -97,10 +97,9 @@
       font-size: 18px;
     }
     @include respond-to(mobile) {
-      font-size: 14px;
+      font-size: 16px;
     }
   }
-
   ul {
     list-style: none;
     padding: 0;
@@ -113,25 +112,30 @@
       letter-spacing: 0.2px;
       color: #737373;
       position: relative;
-      padding-left: 1.5rem;
-      margin-bottom: 1rem;
+      padding-left: 2.5rem; // чуть больше отступ для SVG
+      margin-bottom: 1.5rem;
       text-align: left;
 
       &::before {
-        content: '✔';
+        content: '';
         position: absolute;
         left: 0;
-        top: 0.2rem;
-        color: #8d5cf6;
-        font-size: 1rem;
+        top: 0.4rem; // можно чуть подстроить по высоте
+        width: 24px;
+        height: 24px;
+        background-image: url('data:image/svg+xml;utf8,<svg fill="none" stroke="%238d5cf6" stroke-width="3" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M5 13l4 4L19 7"/></svg>');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
       }
 
       strong {
         display: block;
         font-weight: 600;
-        margin-bottom: 0.3rem;
+        margin-bottom: 0.5rem;
         color: #252b42;
       }
+
       @include respond-to(tablet) {
         font-size: 16px;
       }
