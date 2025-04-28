@@ -9,11 +9,22 @@
   align-items: center;
   gap: 2rem;
   margin-bottom: 112px;
+  @include respond-to(tablet) {
+    flex-direction: column; // Строим в колонку
+  }
+  // display: flex;
+  // justify-content: space-between;
+  // align-items: center;
+  // gap: 2rem;
+  // margin-bottom: 112px;
 }
 .imgSection {
   position: relative;
   width: 50%;
   overflow: hidden;
+  @include respond-to(tablet) {
+    width: 100%;
+  }
 
   .imgPict {
     position: absolute;
@@ -45,6 +56,10 @@
 
   @include respond-to(midDesktop) {
     max-width: 500px;
+  }
+  @include respond-to(tablet) {
+    width: 100%;
+    max-width: 100%;
   }
   h2 {
     font-weight: 700;
