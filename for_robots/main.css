@@ -1,0 +1,5 @@
+/* Главный файл для импорта всех стилей */
+@import './assets/fonts/fonts.css';
+@import 'variables.css';
+@import 'global.css';
+@import 'mixins.css';
