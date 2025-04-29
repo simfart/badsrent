@@ -65,7 +65,7 @@ export const Header: FC = () => {
 
         <a href="tel:+79789410960">
           <button className={styles.contact}>
-            <img src={phoneLightIcon} alt="Позвонить" /> 8 978 941 06 90
+            <img src={phoneLightIcon} alt="Позвонить" /> 8 978 941 09 60
           </button>
         </a>
 
