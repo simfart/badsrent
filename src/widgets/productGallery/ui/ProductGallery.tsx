@@ -46,7 +46,11 @@ export const ProductGallery: React.FC<Props> = ({ product }) => {
               onClick={() => handleChange(index)}
             >
               {item.type === 'image' ? (
-                <img src={item.src} className={styles.thumbnail} alt="" />
+                <img
+                  src={item.src}
+                  className={styles.thumbnail}
+                  alt="Кровать для лежачих больных"
+                />
               ) : (
                 <video src={item.src} className={styles.thumbnail} muted />
               )}

@@ -170,6 +170,7 @@
 @media (max-width: 768px) {
   .mainDescr {
     font-size: 18px;
+    text-align: left;
   }
 }
 

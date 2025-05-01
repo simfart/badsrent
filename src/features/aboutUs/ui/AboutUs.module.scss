@@ -15,7 +15,7 @@
   }
   @include respond-to(mobile) {
     flex-direction: column;
-    margin-bottom: 40px;
+    margin-bottom: 30px;
   }
 }
 .imgSection {
@@ -32,6 +32,10 @@
     left: 36px;
     z-index: 1;
     max-width: 444px;
+    @include respond-to(mobile) {
+      left: 0;
+      max-width: 100%;
+    }
   }
 
   .imgVector {
@@ -40,6 +44,10 @@
     left: 36px;
     z-index: 2;
     width: 444px;
+    @include respond-to(mobile) {
+      left: 0;
+      max-width: 100%;
+    }
   }
 
   .imgPhoto {
@@ -79,7 +87,7 @@
     letter-spacing: 0.2px;
     color: #737373;
     @include respond-to(midDesktop) {
-      font-size: 16px;
+      font-size: 18px;
     }
   }
 }
@@ -98,6 +106,7 @@
     }
     @include respond-to(mobile) {
       font-size: 16px;
+      margin-bottom: 20px;
     }
   }
   ul {
@@ -112,7 +121,7 @@
       letter-spacing: 0.2px;
       color: #737373;
       position: relative;
-      padding-left: 2.5rem; // чуть больше отступ для SVG
+      padding-left: 2.5rem;
       margin-bottom: 1.5rem;
       text-align: left;
 
@@ -120,7 +129,7 @@
         content: '';
         position: absolute;
         left: 0;
-        top: 0.4rem; // можно чуть подстроить по высоте
+        top: 0.4rem;
         width: 24px;
         height: 24px;
         background-image: url('data:image/svg+xml;utf8,<svg fill="none" stroke="%238d5cf6" stroke-width="3" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M5 13l4 4L19 7"/></svg>');
@@ -138,9 +147,7 @@
 
       @include respond-to(tablet) {
         font-size: 16px;
-      }
-      @include respond-to(mobile) {
-        font-size: 14px;
+        line-height: 150%;
       }
     }
   }

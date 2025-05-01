@@ -5,7 +5,6 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 function initGallery() {
-  // Находим все контейнеры галереи
   const galleries = document.querySelectorAll('.galleryContainer');
 
   galleries.forEach((gallery, galleryIndex) => {
@@ -18,100 +17,89 @@ function initGallery() {
     let currentIndex = 0;
     const mediaItems = [];
 
-    // Собираем данные о медиа из миниатюр
-    thumbnails.forEach((thumb, index) => {
+    thumbnails.forEach((thumb) => {
       const media = thumb.querySelector('img, video');
       mediaItems.push({
         type: media.tagName.toLowerCase(),
         src: media.src,
-        alt: media.alt,
+        alt: media.alt || '',
       });
     });
 
-    // Функция обновления активной миниатюры и главного медиа для конкретной галереи
     window[`updateGallery${galleryId}`] = function (newIndex) {
       currentIndex = newIndex;
 
-      // Обновляем активную миниатюру
+      // Обновляем миниатюры
       thumbnails.forEach((thumb, index) => {
-        if (index === currentIndex) {
-          thumb.classList.add('active');
-        } else {
-          thumb.classList.remove('active');
-        }
+        thumb.classList.toggle('active', index === currentIndex);
       });
 
-      // Обновляем главное медиа
       const currentMedia = mediaItems[currentIndex];
-      if (mainMedia) {
+      if (currentMedia) {
         if (currentMedia.type === 'img') {
-          // Если текущий элемент img, обновляем его
-          if (mainMedia.tagName.toLowerCase() === 'img') {
-            mainMedia.src = currentMedia.src;
-            mainMedia.alt = currentMedia.alt;
-          } else {
-            // Если был video, заменяем на img
-            const img = document.createElement('img');
-            img.src = currentMedia.src;
-            img.className = 'mainMedia';
-            img.id = `mainMedia${galleryId}`;
-            img.alt = currentMedia.alt;
-            mainMedia.parentNode.replaceChild(img, mainMedia);
-          }
+          const img = document.createElement('img');
+          img.src = currentMedia.src;
+          img.alt = currentMedia.alt;
+          replaceMainMedia(img, galleryId);
         } else if (currentMedia.type === 'video') {
-          // Если текущий элемент video, обновляем его
-          if (mainMedia.tagName.toLowerCase() === 'video') {
-            mainMedia.src = currentMedia.src;
-          } else {
-            // Если был img, заменяем на video
-            const video = document.createElement('video');
-            video.src = currentMedia.src;
-            video.className = 'mainMedia';
-            video.id = `mainMedia${galleryId}`;
-            video.controls = true;
-            mainMedia.parentNode.replaceChild(video, mainMedia);
-          }
+          const video = document.createElement('video');
+          video.src = currentMedia.src;
+          video.controls = true;
+          video.setAttribute('playsinline', '');
+          video.setAttribute('muted', '');
+          replaceMainMedia(video, galleryId);
         }
       }
     };
 
-    // Инициализация свайпов для мобильных устройств
-    let touchStartX = 0;
-    let touchEndX = 0;
+    addSwipeListeners(galleryId);
+  });
+}
 
-    const mediaWrapper = gallery.querySelector('.mediaWrapper');
-    if (mediaWrapper) {
-      mediaWrapper.addEventListener(
-        'touchstart',
-        (e) => {
-          touchStartX = e.changedTouches[0].screenX;
-        },
-        false,
-      );
+function replaceMainMedia(newMedia, galleryId) {
+  const gallery = document.querySelectorAll('.galleryContainer')[galleryId - 1];
+  const mediaWrapper = gallery.querySelector('.mediaWrapper');
 
-      mediaWrapper.addEventListener(
-        'touchend',
-        (e) => {
-          touchEndX = e.changedTouches[0].screenX;
-          handleSwipe();
-        },
-        false,
-      );
-    }
+  // Очистить старое содержимое
+  mediaWrapper.innerHTML = '';
 
-    function handleSwipe() {
-      if (touchEndX < touchStartX - 50) {
-        // Свайп влево
-        nextMedia(galleryId);
-      } else if (touchEndX > touchStartX + 50) {
-        // Свайп вправо
-        prevMedia(galleryId);
-      }
+  // Назначить классы и ID
+  newMedia.className = 'mainMedia';
+  newMedia.id = `mainMedia${galleryId}`;
+
+  mediaWrapper.appendChild(newMedia);
+
+  // Повторно инициализировать свайпы
+  addSwipeListeners(galleryId);
+}
+
+function addSwipeListeners(galleryId) {
+  const gallery = document.querySelectorAll('.galleryContainer')[galleryId - 1];
+  const mediaWrapper = gallery.querySelector('.mediaWrapper');
+
+  if (!mediaWrapper) return;
+
+  // Удаляем предыдущие обработчики (если они были)
+  mediaWrapper.replaceWith(mediaWrapper.cloneNode(true));
+  const newMediaWrapper = gallery.querySelector('.mediaWrapper');
+
+  let touchStartX = 0;
+  let touchEndX = 0;
+
+  newMediaWrapper.addEventListener('touchstart', function (e) {
+    touchStartX = e.changedTouches[0].screenX;
+  });
+
+  newMediaWrapper.addEventListener('touchend', function (e) {
+    touchEndX = e.changedTouches[0].screenX;
+    if (touchEndX < touchStartX - 50) {
+      nextMedia(galleryId);
+    } else if (touchEndX > touchStartX + 50) {
+      prevMedia(galleryId);
     }
   });
 }
 
-// Вспомогательная функция для управления галереей из HTML
 function handleMediaChange(index, galleryId) {
   const galleries = document.querySelectorAll('.galleryContainer');
   const galleryIndex = galleryId - 1;
@@ -124,7 +112,6 @@ function handleMediaChange(index, galleryId) {
   }
 }
 
-// Функция для переключения на предыдущее изображение
 function prevMedia(galleryId) {
   const galleries = document.querySelectorAll('.galleryContainer');
   const galleryIndex = galleryId - 1;
@@ -141,7 +128,6 @@ function prevMedia(galleryId) {
   }
 }
 
-// Функция для переключения на следующее изображение
 function nextMedia(galleryId) {
   const galleries = document.querySelectorAll('.galleryContainer');
   const galleryIndex = galleryId - 1;

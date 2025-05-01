@@ -1,233 +1,552 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="index.css" />
+    <meta
+      name="description"
+      content="Аренда медицинских кроватей для лежачих больных в Симферополе, Евпатории, Ялте, Керчи, Джанкое, Севастополе и по всему Крыму. Комфортные кровати для реабилитации, низкие цены и быстрая доставка по всему Крыму."
+    />
+    <meta
+      name="keywords"
+      content="аренда медицинских кроватей, прокат медкроватей Симферополь, кровати для лежачих больных, аренда медтехники Крым, Симферополь, Севастополь, Евпатория, Ялта, Керчь, Джанкой, медицинская мебель, реабилитационное оборудование, доставка медкроватей, уход за больными дома"
+    />
+    <meta property="og:title" content="Аренда медицинских кроватей в Крыму" />
+    <meta
+      property="og:description"
+      content="Комфортные кровати для реабилитации. Быстрая доставка по Крыму."
+    />
+    <meta property="og:image" content="https://arendamed82.ru/preview.jpg" />
+    <meta property="og:url" content="https://arendamed82.ru" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta property="og:locale" content="ru_RU" />
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-  <link rel="stylesheet" href="index.css">
-  <title>Аренда медицинской кровати Симферополь, Севастополе и весь Крым</title>
-  <script src="index.js" defer></script>
-  <script src="product-gallery.js" defer></script>
-</head>
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="apple-touch-icon" href="/favicon.ico" />
 
-<body>
-  <div id="root">
-    <header class="header">
-      <div class="headerContent">
-        <div class="headerContainer">
-          <div class="logo">
-            <img src="./assets/images/logo1.png" alt="Логотип" />
-            <div class="logo-title">МедЮг АРЕНДА</div>
+    <title>
+      Аренда медицинских кроватей для лежачих больных в Симферополе и Крыму —
+      доступные цены, быстрая доставка
+    </title>
+    <meta name="robots" content="index, follow" />
+
+    <script src="index.js" defer></script>
+    <script src="product-gallery.js" defer></script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "Аренда медицинских кроватей в Крыму",
+        "description": "Предоставляем в аренду медицинские кровати для реабилитации. Доставка по всему Крыму.",
+        "url": "https://arendamed82.ru",
+        "telephone": "+7 (978) 941-09-60",
+        "address": {
+          "@type": "PostalAddress",
+          "addressCountry": "RU",
+          "addressRegion": "Республика Крым",
+          "addressLocality": "Симферополь",
+          "postalCode": "295000",
+          "streetAddress": "проспект Кирова, 12"
+        },
+        "openingHours": "Mo-Su 09:00-21:00",
+        "image": "https://arendamed82.ru/assets/images/logo1.svg",
+        "sameAs": [
+          "https://vk.com/arendamed82",
+          "https://instagram.com/arendamed82"
+        ]
+      }
+    </script>
+    <meta property="og:type" content="website" />
+  </head>
+
+  <body>
+    <div id="root">
+      <header class="header">
+        <div class="headerContent">
+          <div class="headerContainer">
+            <div class="logo">
+              <img
+                src="./assets/images/logo1.png"
+                alt="Логотип"
+                loading="lazy"
+              />
+              <div class="logo-title">МедЮг АРЕНДА</div>
+            </div>
+
+            <nav class="desktopMenu">
+              <ul>
+                <li>
+                  <button
+                    onclick="handleClick('main')"
+                    aria-label="Переход на главную страницу"
+                  >
+                    Главная
+                  </button>
+                </li>
+                <li>
+                  <button
+                    onclick="handleClick('about-us')"
+                    aria-label="Переход на страницу О нас"
+                  >
+                    О нас
+                  </button>
+                </li>
+                <li>
+                  <button
+                    onclick="handleClick('products')"
+                    aria-label="Переход на страницу с вариантами аренды"
+                  >
+                    Выбор кровати
+                  </button>
+                </li>
+              </ul>
+            </nav>
           </div>
 
-          <nav class="desktopMenu">
+          <a href="tel:+79789410960">
+            <button class="contact" aria-label="Позвонить нам">
+              <img
+                src="./assets/images/phone-light.svg"
+                alt="Позвонить"
+                loading="lazy"
+              />
+              8 978 941 09 60
+            </button>
+          </a>
+
+          <div class="burger" id="burger" data-burger>
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </div>
+
+        <div id="menuRef" class="sideMenu">
+          <nav class="menu">
             <ul>
-              <li>
-                <button onclick="handleClick('main')">Главная</button>
+              <li style="animation-delay: 0.1s">
+                <button
+                  onclick="handleClick('main')"
+                  aria-label="Переход на главную страницу"
+                >
+                  Главная
+                </button>
               </li>
-              <li>
-                <button onclick="handleClick('about-us')">О нас</button>
+              <li style="animation-delay: 0.2s">
+                <button
+                  onclick="handleClick('about-us')"
+                  aria-label="Переход на страницу о нас"
+                >
+                  О нас
+                </button>
               </li>
-              <li>
-                <button onclick="handleClick('products')">
+              <li style="animation-delay: 0.3s">
+                <button
+                  onclick="handleClick('products')"
+                  aria-label="Переход страницу с вариантами аренды"
+                >
                   Выбор кровати
                 </button>
               </li>
             </ul>
           </nav>
         </div>
+      </header>
 
-        <a href="tel:+79789410960">
-          <button class="contact">
-            <img src="./assets/images/phone-light.svg" alt="Позвонить" /> 8 978 941 09 60
-          </button>
-        </a>
-
-        <div class="burger" id="burger" data-burger>
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-      </div>
-
-      <!-- <div class="overlay" id="overlay"></div> -->
-
-      <div id="menuRef" class="sideMenu">
-        <nav class="menu">
-          <ul>
-            <li style="animation-delay: 0.1s">
-              <button onclick="handleClick('main')">Главная</button>
-            </li>
-            <li style="animation-delay: 0.2s">
-              <button onclick="handleClick('about-us')">О нас</button>
-            </li>
-            <li style="animation-delay: 0.3s">
-              <button onclick="handleClick('products')">
-                Выбор кровати
-              </button>
-            </li>
+      <main class="mainContent">
+        <section id="main" class="mainContentIntro">
+          <span>Аренда и доставка по всему Крыму</span>
+          <h1>Медицинские кровати на дом</h1>
+          <span class="listTitle">Только у нас:</span>
+          <ul class="listAnimated">
+            <li>Всегда чистые и исправные кровати</li>
+            <li>Быстрая срочная доставка</li>
+            <li>Оплата после получения кровати</li>
           </ul>
-        </nav>
-      </div>
-    </header>
-
-    <main class="mainContent">
-      <section id="main" class="mainContentIntro">
-        <span>Аренда и доставка по всему Крыму</span>
-        <h1>Медицинские кровати на дом</h1>
-        <span class="listTitle">Только у нас:</span>
-        <ul class="listAnimated">
-          <li>Всегда чистые и исправные кровати</li>
-          <li>Быстрая срочная доставка</li>
-          <li>Оплата после получения кровати</li>
-        </ul>
-      </section>
-      <div class="mainDescr">
-        Более 20 лет мы предоставляем в аренду медицинские функциональные
-        кровати, а также средства реабилитации. Профессиональные решения для
-        комфортного и эффективного восстановления дома.
-      </div>
-
-      <section id="about-us" class="aboutUs">
-        <div class="aboutUsMain">
-          <div class="imgSection">
-            <img class="imgPict" src="./assets/images/Rectangle.png" alt="Вектор" />
-            <img class="imgVector" src="./assets/images/Vector.png" alt="Вектор" />
-            <img class="imgPhoto" src="./assets/images/man.png" alt="Медицинская кровать" />
-          </div>
-          <div class="aboutUsContent">
-            <h2>О нас</h2>
-            <p>
-              Мы — команда, для которой забота о вашем здоровье и комфорте на
-              первом месте. Наша компания специализируется на аренде медицинских
-              кроватей и оборудования для домашнего ухода, помогая создать
-              безопасные и удобные условия для восстановления и повседневной жизни
-              людей с ограниченными возможностями или временными трудностями.
-            </p>
-          </div>
+        </section>
+        <div class="mainDescr">
+          Более 20 лет мы предоставляем в аренду медицинские функциональные
+          кровати, а также средства реабилитации. Профессиональные решения для
+          комфортного и эффективного восстановления дома.
         </div>
-        <div class="whyUs">
-          <h3>Почему выбирают нас:</h3>
-          <ul>
-            <li>
-              <strong>Опыт и профессионализм.</strong> Мы работаем в сфере
-              медицинской техники и реабилитации уже более 20 лет, и точно знаем,
-              что нужно нашим клиентам.
-            </li>
-            <li>
-              <strong>Качество и надежность.</strong> Все кровати и оборудование
-              проходят регулярную проверку и дезинфекцию. Мы работаем только с
-              проверенными поставщиками.
-            </li>
-            <li>
-              <strong>Оперативная доставка и установка.</strong> Мы понимаем, что
-              в вопросах ухода важна каждая минута, поэтому доставляем
-              оборудование максимально быстро и аккуратно.
-            </li>
-            <li>
-              <strong>Работаем по всему Крыму!</strong> Доставим и установим
-              оборудование в любой населённый пункт региона — быстро, аккуратно и
-              без лишних хлопот. Где бы вы ни находились, помощь будет рядом.
-            </li>
-          </ul>
-        </div>
-      </section>
 
-      <section id="products" class="products">
-        <span>Кровати, которые помогают заботиться</span>
-        <h2>Решения для ухода</h2>
-        <div class="productsContainer">
-          <!-- Продукт 1 -->
-          <div class="galleryContainer">
-            <div class="thumbnailList">
-              <div class="thumbnailWrapper active" onclick="handleMediaChange(0, 1)">
-                <img src="./assets/images/med-bad1.jpg" class="thumbnail" alt="Многофункциональные кровати с электроприводом" />
-              </div>
-              <div class="thumbnailWrapper" onclick="handleMediaChange(1, 1)">
-                <img src="./assets/images/med-bad2.jpg" class="thumbnail" alt="Многофункциональные кровати с электроприводом" />
-              </div>
-              <div class="thumbnailWrapper" onclick="handleMediaChange(2, 1)">
-                <img src="./assets/images/med-bad3.jpg" class="thumbnail" alt="Многофункциональные кровати с электроприводом" />
-              </div>
-              <div class="thumbnailWrapper" onclick="handleMediaChange(3, 1)">
-                <img src="./assets/images/med-bad4.jpg" class="thumbnail" alt="Многофункциональные кровати с электроприводом" />
-              </div>
-              <div class="thumbnailWrapper" onclick="handleMediaChange(4, 1)">
-                <img src="./assets/images/met-revel-l-2-1200x1200.jpg" class="thumbnail" alt="Многофункциональные кровати с электроприводом" />
-              </div>
-              <div class="thumbnailWrapper" onclick="handleMediaChange(5, 1)">
-                <img src="./assets/images/met-revel-l-3-1200x1200.jpg" class="thumbnail" alt="Многофункциональные кровати с электроприводом" />
-              </div>
+        <section id="about-us" class="aboutUs">
+          <div class="aboutUsMain">
+            <div class="imgSection">
+              <img
+                class="imgPict"
+                src="./assets/images/Rectangle.png"
+                alt="Медицинская кровать для лежачих больных"
+                loading="lazy"
+              />
+              <img
+                class="imgVector"
+                src="./assets/images/Vector.png"
+                alt="Медицинская кровать для лежачих больных"
+                loading="lazy"
+              />
+              <img
+                class="imgPhoto"
+                src="./assets/images/man.png"
+                alt="Медицинская кровать"
+                loading="lazy"
+              />
             </div>
-
-            <div class="mainViewer">
-              <button class="navButton prevButton" onclick="prevMedia(1)">‹</button>
-              <div class="mediaWrapper">
-                <img src="./assets/images/med-bad1.jpg" class="mainMedia" alt="Многофункциональные кровати с электроприводом" id="mainMedia1" />
-              </div>
-              <button class="navButton nextButton" onclick="nextMedia(1)">›</button>
-            </div>
-
-            <div class="infoPanel">
-              <h3>Многофункциональные кровати с электроприводом</h3>
-              <div class="price">3 999 ₽ / мес</div>
-              <p>Идеальный выбор для ухода за пациентами с ограниченной мобильностью. Кровать оснащена функцией трансформации в кресло, электропереворотом и пультом для регулировки положения тела. Включает туалетное устройство с электроуправлением, складные боковые ограждения, штангу для подтягивания и инфузионную стойку. Удобное решение для комфортного ухода и профилактики пролежней. Максимальная нагрузка — 200 кг</p>
+            <div class="aboutUsContent">
+              <h2>О нас</h2>
+              <p>
+                Мы — команда, для которой забота о вашем здоровье и комфорте на
+                первом месте. Наша компания специализируется на аренде
+                медицинских кроватей и оборудования для домашнего ухода, помогая
+                создать безопасные и удобные условия для восстановления и
+                повседневной жизни людей с ограниченными возможностями или
+                временными трудностями.
+              </p>
             </div>
           </div>
+          <div class="whyUs">
+            <h3>Почему выбирают нас:</h3>
+            <ul>
+              <li>
+                <strong>Опыт и профессионализм.</strong> Мы работаем в сфере
+                медицинской техники и реабилитации уже более 20 лет, и точно
+                знаем, что нужно нашим клиентам.
+              </li>
+              <li>
+                <strong>Качество и надежность.</strong> Все кровати и
+                оборудование проходят регулярную проверку и дезинфекцию. Мы
+                работаем только с проверенными поставщиками.
+              </li>
+              <li>
+                <strong>Оперативная доставка и установка.</strong> Мы понимаем,
+                что в вопросах ухода важна каждая минута, поэтому доставляем
+                оборудование максимально быстро и аккуратно.
+              </li>
+              <li>
+                <strong>Работаем по всему Крыму!</strong> Доставим и установим
+                оборудование в любой населённый пункт региона — быстро,
+                аккуратно и без лишних хлопот. Где бы вы ни находились, помощь
+                будет рядом.
+              </li>
+            </ul>
+          </div>
+        </section>
 
-          <!-- Продукт 2 -->
-          <div class="galleryContainer">
-            <div class="thumbnailList">
-              <div class="thumbnailWrapper active" onclick="handleMediaChange(0, 2)">
-                <img src="./assets/images/med-rev1.webp" class="thumbnail" alt="Медицинские кровати с функцией переворачивания и кардио-креслом" />
+        <section id="products" class="products">
+          <span>Кровати, которые помогают заботиться</span>
+          <h2>Решения для ухода</h2>
+          <div class="productsContainer">
+            <!-- Продукт 1 -->
+            <div class="galleryContainer">
+              <div class="thumbnailList">
+                <div
+                  class="thumbnailWrapper active"
+                  onclick="handleMediaChange(0, 1)"
+                >
+                  <img
+                    src="./assets/images/1.1.jpg"
+                    class="thumbnail"
+                    alt="Медицинская кровать с электроприводом и туалетным устройством в аренду Симферополь"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="thumbnailWrapper" onclick="handleMediaChange(1, 1)">
+                  <img
+                    src="./assets/images/1.2.jpeg"
+                    class="thumbnail"
+                    alt="Медицинская кровать с электроприводом и туалетным устройством в аренду Симферополь"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="thumbnailWrapper" onclick="handleMediaChange(2, 1)">
+                  <img
+                    src="./assets/images/1.3.jpeg"
+                    class="thumbnail"
+                    alt="Медицинская кровать с электроприводом и туалетным устройством в аренду Симферополь"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="thumbnailWrapper" onclick="handleMediaChange(3, 1)">
+                  <img
+                    src="./assets/images/1.4.jpg"
+                    class="thumbnail"
+                    alt="Медицинская кровать с электроприводом и туалетным устройством в аренду Симферополь"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="thumbnailWrapper" onclick="handleMediaChange(4, 1)">
+                  <img
+                    src="./assets/images/1.5.jpg"
+                    class="thumbnail"
+                    alt="Медицинская кровать с электроприводом и туалетным устройством в аренду Симферополь"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="thumbnailWrapper" onclick="handleMediaChange(5, 1)">
+                  <img
+                    src="./assets/images/1.6.jpg"
+                    class="thumbnail"
+                    alt="Медицинская кровать с электроприводом и туалетным устройством в аренду Симферополь"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="thumbnailWrapper" onclick="handleMediaChange(6, 1)">
+                  <img
+                    src="./assets/images/1.7.jpeg"
+                    class="thumbnail"
+                    alt="Медицинская кровать с электроприводом и туалетным устройством в аренду Симферополь"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="thumbnailWrapper" onclick="handleMediaChange(7, 1)">
+                  <img
+                    src="./assets/images/1.8.jpg"
+                    class="thumbnail"
+                    alt="Медицинская кровать с электроприводом и туалетным устройством в аренду Симферополь"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="thumbnailWrapper" onclick="handleMediaChange(8, 1)">
+                  <img
+                    src="./assets/images/1.9.jpg"
+                    class="thumbnail"
+                    alt="Медицинская кровать с электроприводом и туалетным устройством в аренду Симферополь"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="thumbnailWrapper" onclick="handleMediaChange(9, 1)">
+                  <video
+                    src="./assets/images/1.10.mp4"
+                    class="thumbnail"
+                    alt="Медицинская кровать с электроприводом и туалетным устройством в аренду Симферополь"
+                    controls
+                    muted
+                  ></video>
+                </div>
               </div>
-              <div class="thumbnailWrapper" onclick="handleMediaChange(1, 2)">
-                <img src="./assets/images/med-rev2.jpg" class="thumbnail" alt="Медицинские кровати с функцией переворачивания и кардио-креслом" />
+
+              <div class="mainViewer">
+                <button
+                  class="navButton prevButton"
+                  onclick="prevMedia(1)"
+                  aria-label="Предыдущее изображение"
+                >
+                  ‹
+                </button>
+                <div class="mediaWrapper">
+                  <img
+                    src="./assets/images/1.1.jpg"
+                    class="mainMedia"
+                    alt="Медицинская кровать с электроприводом и туалетным устройством в аренду Симферополь"
+                    id="mainMedia1"
+                    loading="lazy"
+                  />
+                </div>
+                <button
+                  class="navButton nextButton"
+                  onclick="nextMedia(1)"
+                  aria-label="Следущее изображение"
+                >
+                  ›
+                </button>
               </div>
-              <div class="thumbnailWrapper" onclick="handleMediaChange(2, 2)">
-                <img src="./assets/images/med-rev3.jpg" class="thumbnail" alt="Медицинские кровати с функцией переворачивания и кардио-креслом" />
-              </div>
-              <div class="thumbnailWrapper" onclick="handleMediaChange(3, 2)">
-                <img src="./assets/images/med-rev4.jpg" class="thumbnail" alt="Медицинские кровати с функцией переворачивания и кардио-креслом" />
+
+              <div class="infoPanel">
+                <h3>Многофункциональные кровати с электроприводом</h3>
+                <div class="price">3 999 ₽ / мес</div>
+                <p>
+                  Идеальный выбор для ухода за пациентами с ограниченной
+                  мобильностью. Кровать оснащена функцией трансформации в
+                  кресло, электропереворотом и пультом для регулировки положения
+                  тела. Включает туалетное устройство с электроуправлением,
+                  складные боковые ограждения, штангу для подтягивания и
+                  инфузионную стойку. Удобное решение для комфортного ухода и
+                  профилактики пролежней. Максимальная нагрузка — 200 кг
+                </p>
               </div>
             </div>
 
-            <div class="mainViewer">
-              <button class="navButton prevButton" onclick="prevMedia(2)">‹</button>
-              <div class="mediaWrapper">
-                <img src="./assets/images/med-rev1.webp" class="mainMedia" alt="Медицинские кровати с функцией переворачивания и кардио-креслом" id="mainMedia2" />
+            <!-- Продукт 2 -->
+            <div class="galleryContainer">
+              <div class="thumbnailList">
+                <div
+                  class="thumbnailWrapper active"
+                  onclick="handleMediaChange(0, 2)"
+                >
+                  <img
+                    src="./assets/images/2.1.jpeg"
+                    class="thumbnail"
+                    alt="Медицинские кровати с функцией переворачивания и кардио-креслом"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="thumbnailWrapper" onclick="handleMediaChange(1, 2)">
+                  <img
+                    src="./assets/images/2.2.jpg"
+                    class="thumbnail"
+                    alt="Медицинские кровати с функцией переворачивания и кардио-креслом"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="thumbnailWrapper" onclick="handleMediaChange(2, 2)">
+                  <img
+                    src="./assets/images/2.3.webp"
+                    class="thumbnail"
+                    alt="Медицинские кровати с функцией переворачивания и кардио-креслом"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="thumbnailWrapper" onclick="handleMediaChange(3, 2)">
+                  <img
+                    src="./assets/images/2.4.png"
+                    class="thumbnail"
+                    alt="Медицинские кровати с функцией переворачивания и кардио-креслом"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="thumbnailWrapper" onclick="handleMediaChange(4, 2)">
+                  <img
+                    src="./assets/images/2.5.png"
+                    class="thumbnail"
+                    alt="Медицинские кровати с функцией переворачивания и кардио-креслом"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="thumbnailWrapper" onclick="handleMediaChange(5, 2)">
+                  <img
+                    src="./assets/images/2.6.png"
+                    class="thumbnail"
+                    alt="Медицинские кровати с функцией переворачивания и кардио-креслом"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="thumbnailWrapper" onclick="handleMediaChange(6, 2)">
+                  <img
+                    src="./assets/images/2.7.jpg"
+                    class="thumbnail"
+                    alt="Медицинские кровати с функцией переворачивания и кардио-креслом"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="thumbnailWrapper" onclick="handleMediaChange(7, 2)">
+                  <img
+                    src="./assets/images/2.8.jpg"
+                    class="thumbnail"
+                    alt="Медицинские кровати с функцией переворачивания и кардио-креслом"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="thumbnailWrapper" onclick="handleMediaChange(8, 2)">
+                  <img
+                    src="./assets/images/2.9.jpg"
+                    class="thumbnail"
+                    alt="Медицинские кровати с функцией переворачивания и кардио-креслом"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="thumbnailWrapper" onclick="handleMediaChange(9, 2)">
+                  <img
+                    src="./assets/images/2.10.jpg"
+                    class="thumbnail"
+                    alt="Медицинские кровати с функцией переворачивания и кардио-креслом"
+                    loading="lazy"
+                  />
+                </div>
+                <div
+                  class="thumbnailWrapper"
+                  onclick="handleMediaChange(10, 2)"
+                >
+                  <img
+                    src="./assets/images/2.11.jpg"
+                    class="thumbnail"
+                    alt="Медицинские кровати с функцией переворачивания и кардио-креслом"
+                    loading="lazy"
+                  />
+                </div>
+                <div
+                  class="thumbnailWrapper"
+                  onclick="handleMediaChange(11, 2)"
+                >
+                  <img
+                    src="./assets/images/2.12.jpg"
+                    class="thumbnail"
+                    alt="Медицинские кровати с функцией переворачивания и кардио-креслом"
+                    loading="lazy"
+                  />
+                </div>
               </div>
-              <button class="navButton nextButton" onclick="nextMedia(2)">›</button>
-            </div>
 
-            <div class="infoPanel">
-              <h3>Медицинские кровати с функцией переворачивания и кардио-креслом</h3>
-              <div class="price">3 999 ₽ / мес</div>
-              <p>Кровати оснащены туалетным устройством, надкроватным столиком и матрасом с усиленной жесткостью. Функция переворачивания осуществляется с помощью вращения рукояток, что помогает предотвратить пролежни и улучшить кровообращение. Удобные винтовые регулировки, алюминиевые боковые ограждения с фиксацией, самоориентирующиеся колеса и тормоза обеспечивают комфорт и безопасность. Также в комплект входит штанга для подтягивания.</p>
+              <div class="mainViewer">
+                <button
+                  class="navButton prevButton"
+                  onclick="prevMedia(2)"
+                  aria-label="Предыдущее изображение"
+                >
+                  ‹
+                </button>
+                <div class="mediaWrapper">
+                  <img
+                    src="./assets/images/2.1.jpeg"
+                    class="mainMedia"
+                    alt="Медицинские кровати с функцией переворачивания и кардио-креслом"
+                    id="mainMedia2"
+                    loading="lazy"
+                  />
+                </div>
+                <button
+                  class="navButton nextButton"
+                  onclick="nextMedia(2)"
+                  aria-label="Следущее изображение"
+                >
+                  ›
+                </button>
+              </div>
+
+              <div class="infoPanel">
+                <h3>
+                  Медицинские кровати с функцией переворачивания и
+                  кардио-креслом
+                </h3>
+                <div class="price">3 999 ₽ / мес</div>
+                <p>
+                  Кровати оснащены туалетным устройством, надкроватным столиком
+                  и матрасом с усиленной жесткостью. Функциональные медицинские
+                  кровати предназначены для лежачих больных: функция
+                  переворачивания осуществляется с помощью вращения рукояток,
+                  что помогает предотвратить пролежни и улучшить кровообращение.
+                  Удобные винтовые регулировки, алюминиевые боковые ограждения с
+                  фиксацией, самоориентирующиеся колеса и тормоза обеспечивают
+                  комфорт и безопасность. Также в комплект входит штанга для
+                  подтягивания.
+                </p>
+              </div>
             </div>
           </div>
+        </section>
+      </main>
+
+      <footer class="footer" id="contacts">
+        <div class="contacts">
+          <a href="tel:+79789410960" class="contactItem">
+            <img src="./assets/images/phone.svg" alt="Phone" />
+            <span>+7 (978) 941-09-60</span>
+          </a>
+          <a href="mailto:contact@arendamed82.ru" class="contactItem">
+            <img src="./assets/images/mail.svg" alt="Email" />
+            <span>contact@arendamed82.ru</span>
+          </a>
+          <a
+            href="https://t.me/rental_honey_bed"
+            class="contactItem"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img src="./assets/images/telegram.svg" alt="Telegram" />
+            <span>@rental_honey_bed</span>
+          </a>
         </div>
-      </section>
-    </main>
-
-    <footer class="footer" id="contacts">
-      <div class="contacts">
-        <a href="tel:+79789410960" class="contactItem">
-          <img src="./assets/images/phone.svg" alt="Phone" />
-          <span>+7 (978) 941-09-60</span>
-        </a>
-        <a href="mailto:contact@arendamed82.ru" class="contactItem">
-          <img src="./assets/images/mail.svg" alt="Email" />
-          <span>contact@arendamed82.ru</span>
-        </a>
-        <a href="https://t.me/rental_honey_bed" class="contactItem" target="_blank" rel="noopener noreferrer">
-          <img src="./assets/images/telegram.svg" alt="Telegram" />
-          <span>@rental_honey_bed</span>
-        </a>
-      </div>
-    </footer>
-  </div>
-</body>
-
+      </footer>
+    </div>
+  </body>
 </html>
