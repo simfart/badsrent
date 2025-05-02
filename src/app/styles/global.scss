@@ -1,8 +1,24 @@
 @use 'styles/variables' as *;
 @use 'styles/mixins' as *;
+@import url('../../shared/assets/fonts/fonts.css');
+
+:root {
+  font-family: 'Montserrat', system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
 
 body {
-  background-color: $mobile-breakpoint; // Используем переменную из variables.scss
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-style: normal;
+  font-size: 14px;
+  color: #252b42;
+  margin: 0;
+  background-color: #ffffff;
 }
 
 #root {
@@ -10,10 +26,6 @@ body {
   margin: 0 auto;
   text-align: center;
   width: 100%;
-}
-
-body {
-  margin: 0;
 }
 
 h1,

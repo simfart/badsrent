@@ -10,6 +10,7 @@
 
   @include respond-to(mobile) {
     margin: 0;
+    align-items: center;
   }
 
   .productsContainer {
@@ -23,9 +24,6 @@
     letter-spacing: 0.2px;
     color: #8d5cf6;
     margin-bottom: 10px;
-    @include respond-to(mobile) {
-      text-align: left;
-    }
   }
 
   h2 {
@@ -37,7 +35,6 @@
     margin-bottom: 35px;
     @include respond-to(mobile) {
       margin-bottom: 20px;
-      text-align: left;
     }
   }
 }
