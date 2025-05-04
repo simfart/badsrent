@@ -35,6 +35,7 @@
     margin-bottom: 35px;
     @include respond-to(mobile) {
       margin-bottom: 20px;
+      text-align: center;
     }
   }
 }

@@ -4,7 +4,7 @@ import { manImg, RectangImg, vectorImg } from 'shared/assets/images';
 
 export const AboutUs: FC = () => {
   return (
-    <section id="about-us" className={styles.aboutUs}>
+    <section id="about-us" className={styles.aboutUs} itemScope itemType="http://schema.org/Organization">
       <div className={styles.aboutUsMain}>
         <div className={styles.imgSection}>
           <img className={styles.imgPict} src={RectangImg} alt="Вектор" />
@@ -16,9 +16,8 @@ export const AboutUs: FC = () => {
           />
         </div>
         <div className={styles.aboutUsContent}>
-          {' '}
-          <h2>О нас</h2>
-          <p>
+          <h2 itemProp="name">О нас</h2>
+          <p itemProp="description">
             Мы — команда, для которой забота о вашем здоровье и комфорте на
             первом месте. Наша компания специализируется на аренде медицинских
             кроватей и оборудования для домашнего ухода, помогая создать

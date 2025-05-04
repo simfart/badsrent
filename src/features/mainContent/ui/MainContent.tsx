@@ -6,7 +6,7 @@ import { ProductList } from 'features/productList';
 
 export const MainContent: FC = () => {
   return (
-    <main className={styles.mainContent}>
+    <main className={styles.mainContent} itemScope itemType="http://schema.org/MedicalDevice">
       <section id="main" className={styles.mainContentIntro}>
         <span>Аренда и доставка по всему Крыму</span>
         <h1>Медицинские кровати на дом</h1>
@@ -17,7 +17,7 @@ export const MainContent: FC = () => {
           <li>Оплата после получения кровати</li>
         </ul>
       </section>
-      <div className={styles.mainDescr}>
+      <div className={styles.mainDescr} itemProp="description">
         {' '}
         Более 20 лет мы предоставляем в аренду медицинские функциональные
         кровати, а также средства реабилитации. Профессиональные решения для

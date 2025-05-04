@@ -49,13 +49,26 @@ export const Header: FC = () => {
           <nav className={styles.desktopMenu}>
             <ul>
               <li>
-                <button onClick={() => handleClick('main')}>Главная</button>
+                <button
+                  onClick={() => handleClick('main')}
+                  aria-label="Переход на главную страницу"
+                >
+                  Главная
+                </button>
               </li>
               <li>
-                <button onClick={() => handleClick('about-us')}>О нас</button>
+                <button
+                  onClick={() => handleClick('about-us')}
+                  aria-label="Переход на страницу о нас"
+                >
+                  О нас
+                </button>
               </li>
               <li>
-                <button onClick={() => handleClick('products')}>
+                <button
+                  onClick={() => handleClick('products')}
+                  aria-label="Переход к вариантам аренды"
+                >
                   Выбор кровати
                 </button>
               </li>
@@ -64,7 +77,10 @@ export const Header: FC = () => {
         </div>
 
         <a href="tel:+79789410960">
-          <button className={styles.contact}>
+          <button
+            className={styles.contact}
+            aria-label="Набрать номер телефона"
+          >
             <img src={phoneLightIcon} alt="Позвонить" /> 8 978 941 09 60
           </button>
         </a>
@@ -93,13 +109,26 @@ export const Header: FC = () => {
         <nav className={styles.menu}>
           <ul>
             <li style={{ animationDelay: '0.1s' }}>
-              <button onClick={() => handleClick('main')}>Главная</button>
+              <button
+                onClick={() => handleClick('main')}
+                aria-label="Переход на главную страницу"
+              >
+                Главная
+              </button>
             </li>
             <li style={{ animationDelay: '0.2s' }}>
-              <button onClick={() => handleClick('about-us')}>О нас</button>
+              <button
+                onClick={() => handleClick('about-us')}
+                aria-label="Переход на страницу о нас"
+              >
+                О нас
+              </button>
             </li>
             <li style={{ animationDelay: '0.3s' }}>
-              <button onClick={() => handleClick('products')}>
+              <button
+                onClick={() => handleClick('products')}
+                aria-label="Переход к вариантам аренды"
+              >
                 Выбор кровати
               </button>
             </li>

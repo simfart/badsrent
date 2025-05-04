@@ -33,7 +33,7 @@ export const ProductGallery: React.FC<Props> = ({ product }) => {
   });
 
   return (
-    <div className={styles.galleryContainer}>
+    <div className={styles.galleryContainer} role="region" aria-label="Галерея продукта">
       <div className={styles.thumbnailList}>
         {product.media.map((item, index) => {
           const isActive = index === currentIndex;
@@ -49,7 +49,8 @@ export const ProductGallery: React.FC<Props> = ({ product }) => {
                 <img
                   src={item.src}
                   className={styles.thumbnail}
-                  alt="Кровать для лежачих больных"
+                  alt={item.altLabel}
+                  loading="lazy"
                 />
               ) : (
                 <video src={item.src} className={styles.thumbnail} muted />
@@ -60,7 +61,11 @@ export const ProductGallery: React.FC<Props> = ({ product }) => {
       </div>
 
       <div className={styles.mainViewer}>
-        <button onClick={handlePrev} className={styles.navButton}>
+        <button
+          onClick={handlePrev}
+          className={styles.navButton}
+          aria-label="Предыдущее изображение"
+        >
           ‹
         </button>
         <div {...swipeHandlers} className={styles.mediaWrapper}>
@@ -74,7 +79,11 @@ export const ProductGallery: React.FC<Props> = ({ product }) => {
             />
           )}
         </div>
-        <button onClick={handleNext} className={styles.navButton}>
+        <button
+          onClick={handleNext}
+          className={styles.navButton}
+          aria-label="Следущее изображение"
+        >
           ›
         </button>
       </div>

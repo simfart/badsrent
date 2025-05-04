@@ -118,6 +118,8 @@
     color: #fff;
     border: none;
     white-space: nowrap;
+    text-decoration: none;
+    cursor: pointer;
 
     @include respond-to(tablet) {
       padding: 10px 15px;
@@ -255,5 +257,15 @@
   to {
     opacity: 1;
     transform: translateX(0);
+  }
+}
+
+
+// Добавьте этот блок в конец файла
+a {
+  text-decoration: none; // Убирает подчеркивание у всех ссылок внутри хедера
+
+  &:has(> .contact) { // Применяет стиль только к ссылке, содержащей кнопку .contact
+    text-decoration: none;
   }
 }
