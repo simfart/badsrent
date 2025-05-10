@@ -53,7 +53,15 @@ export const ProductGallery: React.FC<Props> = ({ product }) => {
                   loading="lazy"
                 />
               ) : (
-                <video src={item.src} className={styles.thumbnail} muted />
+                <div className={styles.videoThumbnailContainer}>
+                  <video 
+                    src={item.src} 
+                    className={styles.thumbnail} 
+                    muted 
+                    poster={item.poster || item.src} 
+                  />
+                  <div className={styles.playIcon}>▶</div>
+                </div>
               )}
             </div>
           );

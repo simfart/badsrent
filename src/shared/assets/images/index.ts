@@ -30,6 +30,7 @@ import bed29Img from './2.9.jpg';
 import bed210Img from './2.10.jpg';
 import bed211Img from './2.11.jpg';
 import bed212Img from './2.12.jpg';
+import poster from './video_poster.png';
 
 export {
   manImg,
@@ -62,4 +63,5 @@ export {
   bed211Img,
   bed212Img,
   bedVid,
+  poster,
 };

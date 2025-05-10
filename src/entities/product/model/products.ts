@@ -21,6 +21,7 @@ import {
   bed211Img,
   bed212Img,
   bedVid,
+  poster,
 } from 'shared/assets/images';
 import { Product } from 'shared/assets/types/product';
 
@@ -63,6 +64,8 @@ export const products: Product[] = [
         altLabel:
           'Медицинская кровать с электроприводом и туалетным устройством в аренду Симферополь',
       },
+      { type: 'video', src: bedVid, poster: poster },
+
       {
         type: 'image',
         src: bed16Img,
@@ -87,7 +90,6 @@ export const products: Product[] = [
         altLabel:
           'Медицинская кровать с электроприводом и туалетным устройством в аренду Симферополь',
       },
-      { type: 'video', src: bedVid },
     ],
   },
   {

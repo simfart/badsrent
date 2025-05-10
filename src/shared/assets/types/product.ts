@@ -2,6 +2,7 @@ export type MediaItem = {
   type: 'image' | 'video';
   src: string;
   altLabel?: string;
+  poster?: string;
 };
 
 export type Product = {
