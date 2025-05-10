@@ -18,8 +18,13 @@ export async function render(pageContext: PageContextServer) {
     <html lang="ru">
       <head>
         <meta charset="UTF-8" />
+        <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-        <link rel="apple-touch-icon" href="/favicon.svg" />
+        <link rel="icon" href="/favicon.ico">
+        <link rel="shortcut icon" href="/favicon.ico" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+        <meta name="apple-mobile-web-app-title" content="МедЮг" />
+        <link rel="manifest" href="/site.webmanifest" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="description" content="Аренда медицинских кроватей для лежачих больных в Симферополе, Евпатории, Ялте, Керчи, Джанкое, Севастополе и по всему Крыму. Комфортные кровати для реабилитации, низкие цены и быстрая доставка по всему Крыму" />
         <meta name="keywords" content="аренда медицинских кроватей, прокат медкроватей Симферополь, кровати для лежачих больных, аренда медтехники Крым, Симферополь, Севастополь, Евпатория, Ялта, Керчь, Джанкой, медицинская мебель, реабилитационное оборудование, доставка медкроватей, уход за больными дома" />
