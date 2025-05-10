@@ -1,10 +1,15 @@
 import { FC } from 'react';
-import styles from './AboutUs.module.scss';
 import { manImg, RectangImg, vectorImg } from 'shared/assets/images';
+import styles from './AboutUs.module.scss';
 
 export const AboutUs: FC = () => {
   return (
-    <section id="about-us" className={styles.aboutUs} itemScope itemType="http://schema.org/Organization">
+    <section
+      id="about-us"
+      className={styles.aboutUs}
+      itemScope
+      itemType="http://schema.org/Organization"
+    >
       <div className={styles.aboutUsMain}>
         <div className={styles.imgSection}>
           <img className={styles.imgPict} src={RectangImg} alt="Вектор" />

@@ -1,7 +1,7 @@
 import React from 'react';
 import { products } from 'entities/product/model/products';
+import { ProductGallery } from 'widgets/productGallery/ProductGallery';
 import styles from './ProductList.module.scss';
-import { ProductGallery } from 'widgets/productGallery';
 
 export const ProductList: React.FC = () => (
   <section id="products" className={styles.products}>
