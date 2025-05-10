@@ -32,8 +32,30 @@ export const ProductGallery: React.FC<Props> = ({ product }) => {
     touchEventOptions: { passive: false },
   });
 
+  // Add VideoObject Schema
+  const videoMedia = product.media.find((item) => item.type === 'video');
+  const videoSchema = videoMedia ? (
+    <script type="application/ld+json">
+      {JSON.stringify({
+        '@context': 'http://schema.org',
+        '@type': 'VideoObject',
+        name: product.name,
+        description: product.description,
+        thumbnailUrl: videoMedia.poster || videoMedia.src,
+        contentUrl: videoMedia.src,
+        embedUrl: videoMedia.src,
+        uploadDate: new Date().toISOString(),
+      })}
+    </script>
+  ) : null;
+
   return (
-    <div className={styles.galleryContainer} role="region" aria-label="Галерея продукта">
+    <div
+      className={styles.galleryContainer}
+      role="region"
+      aria-label="Галерея продукта"
+    >
+      {videoSchema} {/* Inject the VideoObject schema */}
       <div className={styles.thumbnailList}>
         {product.media.map((item, index) => {
           const isActive = index === currentIndex;
@@ -54,11 +76,11 @@ export const ProductGallery: React.FC<Props> = ({ product }) => {
                 />
               ) : (
                 <div className={styles.videoThumbnailContainer}>
-                  <video 
-                    src={item.src} 
-                    className={styles.thumbnail} 
-                    muted 
-                    poster={item.poster || item.src} 
+                  <video
+                    src={item.src}
+                    className={styles.thumbnail}
+                    muted
+                    poster={item.poster || item.src}
                   />
                   <div className={styles.playIcon}>▶</div>
                 </div>
@@ -67,7 +89,6 @@ export const ProductGallery: React.FC<Props> = ({ product }) => {
           );
         })}
       </div>
-
       <div className={styles.mainViewer}>
         <button
           onClick={handlePrev}
@@ -95,7 +116,6 @@ export const ProductGallery: React.FC<Props> = ({ product }) => {
           ›
         </button>
       </div>
-
       <div className={styles.infoPanel}>
         <h3>{product.name}</h3>
         <div className={styles.price}>{product.price}</div>
