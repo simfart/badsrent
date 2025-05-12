@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useSwipeable } from 'react-swipeable';
 import styles from './ProductGallery.module.scss';
 import { Product } from 'shared/assets/types/product';
@@ -9,6 +9,12 @@ interface Props {
 
 export const ProductGallery: React.FC<Props> = ({ product }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [isHydrated, setIsHydrated] = useState(false);
+
+  useEffect(() => {
+    setIsHydrated(true);
+  }, []);
+
   const currentMedia = product.media[currentIndex];
 
   const handleChange = (index: number) => {
@@ -32,30 +38,26 @@ export const ProductGallery: React.FC<Props> = ({ product }) => {
     touchEventOptions: { passive: false },
   });
 
-  // Add VideoObject Schema
-  const videoMedia = product.media.find((item) => item.type === 'video');
-  const videoSchema = videoMedia ? (
-    <script type="application/ld+json">
-      {JSON.stringify({
-        '@context': 'http://schema.org',
-        '@type': 'VideoObject',
-        name: product.name,
-        description: product.description,
-        thumbnailUrl: videoMedia.poster || videoMedia.src,
-        contentUrl: videoMedia.src,
-        embedUrl: videoMedia.src,
-        uploadDate: new Date().toISOString(),
-      })}
-    </script>
-  ) : null;
+  if (!isHydrated) {
+    // 🔒 Статичный SSR-контент, чтобы избежать несовпадений
+    return (
+      <div className={styles.galleryContainer}>
+        <div className={styles.infoPanel}>
+          <h3>{product.name}</h3>
+          <div className={styles.price}>{product.price}</div>
+          <p>{product.description}</p>
+        </div>
+      </div>
+    );
+  }
 
+  // 🔁 Основной интерактивный UI после гидрации
   return (
     <div
       className={styles.galleryContainer}
       role="region"
       aria-label="Галерея продукта"
     >
-      {videoSchema} {/* Inject the VideoObject schema */}
       <div className={styles.thumbnailList}>
         {product.media.map((item, index) => {
           const isActive = index === currentIndex;
@@ -89,6 +91,7 @@ export const ProductGallery: React.FC<Props> = ({ product }) => {
           );
         })}
       </div>
+
       <div className={styles.mainViewer}>
         <button
           onClick={handlePrev}
@@ -97,6 +100,7 @@ export const ProductGallery: React.FC<Props> = ({ product }) => {
         >
           ‹
         </button>
+
         <div {...swipeHandlers} className={styles.mediaWrapper}>
           {currentMedia.type === 'image' ? (
             <img src={currentMedia.src} className={styles.mainMedia} alt="" />
@@ -108,14 +112,16 @@ export const ProductGallery: React.FC<Props> = ({ product }) => {
             />
           )}
         </div>
+
         <button
           onClick={handleNext}
           className={styles.navButton}
-          aria-label="Следущее изображение"
+          aria-label="Следующее изображение"
         >
           ›
         </button>
       </div>
+
       <div className={styles.infoPanel}>
         <h3>{product.name}</h3>
         <div className={styles.price}>{product.price}</div>

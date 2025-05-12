@@ -7,6 +7,8 @@ import ssr from 'vike/plugin';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
+const isProduction = process.env.NODE_ENV === 'production';
+
 export default defineConfig({
   plugins: [
     react(),
@@ -18,6 +20,12 @@ export default defineConfig({
   publicDir: 'public',
   assetsInclude: ['**/*.woff', '**/*.woff2'],
   css: {
+    modules: {
+      // 👇 гарантирует стабильные имена в прод и dev
+      generateScopedName: isProduction
+        ? '[hash:base64:8]' // для продакшена — короткие хэши
+        : '[name]__[local]__[hash:base64:5]', // для dev — читаемые имена
+    },
     preprocessorOptions: {
       scss: {
         additionalData: `
