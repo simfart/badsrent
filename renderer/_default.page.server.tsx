@@ -85,7 +85,17 @@ export async function render(pageContext: PageContextServer) {
         <meta name="locale" content="ru_RU" />
       </head>
       <body>
-        <div id="app">${dangerouslySkipEscape(pageHtml)}</div>
+        <div id="app" data-lcp-container="true">${dangerouslySkipEscape(pageHtml)}</div>
+        <script>
+          // Приоритизация LCP элемента
+          document.addEventListener('DOMContentLoaded', () => {
+            const lcpElement = document.querySelector('[itemProp="description"]');
+            if (lcpElement) {
+              lcpElement.setAttribute('data-lcp-element', 'true');
+              lcpElement.setAttribute('data-importance', 'high');
+            }
+          });
+        </script>
       </body>
     </html>`;
 }

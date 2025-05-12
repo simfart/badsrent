@@ -3,6 +3,8 @@ import react from '@vitejs/plugin-react';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import ssr from 'vike/plugin';
+import { createHtmlPlugin } from 'vite-plugin-html';
+import { ViteImageOptimizer } from 'vite-plugin-image-optimizer';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -15,6 +17,33 @@ export default defineConfig({
     ssr({
       prerender: true,
       includeAssetsImportedByServer: true,
+    }),
+    createHtmlPlugin({
+      minify: isProduction,
+      inject: {
+        data: {
+          preloadTags: `
+            <link rel="preload" href="/assets/static/index.css" as="style">
+            <link rel="preload" href="/assets/static/Montserrat-Bold.woff2" as="font" type="font/woff2" crossorigin>
+            <link rel="preload" href="/assets/static/Montserrat-Regular.woff2" as="font" type="font/woff2" crossorigin>
+          `,
+        },
+      },
+    }),
+    ViteImageOptimizer({
+      exclude: ['**/*.svg'],
+      png: {
+        quality: 70,
+      },
+      jpeg: {
+        quality: 70,
+      },
+      jpg: {
+        quality: 70,
+      },
+      webp: {
+        lossless: true,
+      },
     }),
   ],
   publicDir: 'public',
