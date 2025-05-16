@@ -24,8 +24,8 @@ export default defineConfig({
         data: {
           preloadTags: `
             <link rel="preload" href="/assets/static/index.css" as="style">
-            <link rel="preload" href="/assets/static/Montserrat-Bold.woff2" as="font" type="font/woff2" crossorigin>
-            <link rel="preload" href="/assets/static/Montserrat-Regular.woff2" as="font" type="font/woff2" crossorigin>
+            <link rel="preload" href="/assets/static/Montserrat-Bold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+            <link rel="preload" href="/assets/static/Montserrat-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
           `,
         },
       },

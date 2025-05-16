@@ -18,12 +18,22 @@
     margin-bottom: 30px;
   }
 }
+
 .imgSection {
   position: relative;
   width: 50%;
+  min-height: 300px; // 👈 резервируем место
   overflow: hidden;
   @include respond-to(tablet) {
     width: 100%;
+  }
+
+  .imgPict,
+  .imgVector,
+  .imgPhoto {
+    display: block;
+    max-width: 100%;
+    height: auto;
   }
 
   .imgPict {
@@ -32,10 +42,6 @@
     left: 36px;
     z-index: 1;
     max-width: 444px;
-    @include respond-to(mobile) {
-      left: 0;
-      max-width: 100%;
-    }
   }
 
   .imgVector {
@@ -44,10 +50,6 @@
     left: 36px;
     z-index: 2;
     width: 444px;
-    @include respond-to(mobile) {
-      left: 0;
-      max-width: 100%;
-    }
   }
 
   .imgPhoto {
@@ -86,8 +88,13 @@
     line-height: 150%;
     letter-spacing: 0.2px;
     color: #737373;
+    margin-bottom: 16px;
+
     @include respond-to(midDesktop) {
       font-size: 18px;
+    }
+    @include respond-to(mobile) {
+      font-size: 16px;
     }
   }
 }
