@@ -3,6 +3,7 @@ import { AboutUs } from 'features/aboutUs/AboutUs';
 import { ProductList } from 'features/productList/ProductList';
 import styles from './MainContent.module.scss';
 import { MainDescription } from './mainDescription/mainDescription';
+import { Faq } from 'features/faq/faq';
 
 export const MainContent: FC = () => {
   return (
@@ -23,8 +24,8 @@ export const MainContent: FC = () => {
       </section>
       <MainDescription />
       <AboutUs />
-
       <ProductList />
+      <Faq />
     </main>
   );
 };

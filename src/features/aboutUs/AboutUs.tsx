@@ -17,7 +17,7 @@ export const AboutUs: FC = memo(() => {
         }
       },
       {
-        rootMargin: '0px 0px -100px 0px', // чуть раньше, чем полностью в зоне
+        rootMargin: '0px 0px -100px 0px',
         threshold: 0.1,
       },
     );
@@ -40,8 +40,8 @@ export const AboutUs: FC = memo(() => {
             className={styles.imgPict}
             src={RectangImg}
             alt=""
-            width="444"
-            height="auto"
+            // width="444"
+            // height="auto"
             loading="lazy"
           />
           <img
