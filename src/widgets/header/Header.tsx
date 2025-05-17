@@ -72,6 +72,14 @@ export const Header: FC = () => {
                   Выбор кровати
                 </button>
               </li>
+              <li>
+                <button
+                  onClick={() => handleClick('faq')}
+                  aria-label="Переход к вопросам и ответам"
+                >
+                  Вопросы и ответы
+                </button>
+              </li>
             </ul>
           </nav>
         </div>
@@ -130,6 +138,14 @@ export const Header: FC = () => {
                 aria-label="Переход к вариантам аренды"
               >
                 Выбор кровати
+              </button>
+            </li>
+            <li style={{ animationDelay: '0.3s' }}>
+              <button
+                onClick={() => handleClick('faq')}
+                aria-label="Переход к вопросам и ответам"
+              >
+                Вопросы и ответы
               </button>
             </li>
           </ul>

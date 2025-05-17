@@ -183,6 +183,7 @@
         opacity: 0;
         transform: translateX(20px);
         animation: slideIn 0.4s forwards;
+        text-align: center;
       }
       @include respond-to(mobile) {
         padding: 20px 10px;
@@ -260,12 +261,12 @@
   }
 }
 
-
 // Добавьте этот блок в конец файла
 a {
   text-decoration: none; // Убирает подчеркивание у всех ссылок внутри хедера
 
-  &:has(> .contact) { // Применяет стиль только к ссылке, содержащей кнопку .contact
+  &:has(> .contact) {
+    // Применяет стиль только к ссылке, содержащей кнопку .contact
     text-decoration: none;
   }
 }

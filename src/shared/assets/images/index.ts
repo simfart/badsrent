@@ -30,6 +30,7 @@ import bed29Img from './2.9.webp';
 import bed210Img from './2.10.webp';
 import bed211Img from './2.11.webp';
 import bed212Img from './2.12.webp';
+
 import poster from './video_poster.webp';
 
 export {
