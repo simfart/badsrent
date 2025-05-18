@@ -1,5 +1,5 @@
 import { FC, memo } from 'react';
-import { manImg, RectangImg, vectorImg } from 'shared/assets/images';
+import { man2 } from 'shared/assets/images';
 import styles from './AboutUs.module.scss';
 
 export const AboutUs: FC = memo(() => {
@@ -11,37 +11,15 @@ export const AboutUs: FC = memo(() => {
       itemType="http://schema.org/Organization"
     >
       <div className={styles.aboutUsMain}>
-        <div
-          className={styles.imgSection}
-          itemProp="description"
-          data-lcp-element="true"
-          data-importance="high"
-        >
-          <img
-            className={styles.imgPict}
-            src={RectangImg}
-            alt=""
-            loading="eager"
-            fetchPriority="high"
-            width="600"
-            height="400"
-          />
-          <img
-            className={styles.imgVector}
-            src={vectorImg}
-            loading="eager"
-            width="600"
-            height="400"
-            fetchPriority="high"
-          />
+        <div className={styles.imgSection}>
           <img
             className={styles.imgPhoto}
-            src={manImg}
-            alt="Медицинская кровать"
+            src={man2}
+            alt="Описание изображения"
             loading="eager"
-            fetchPriority="high"
-            width="600"
-            height="400"
+            itemProp="description"
+            data-lcp-element="true"
+            data-importance="high"
           />
         </div>
 

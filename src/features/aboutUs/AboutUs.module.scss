@@ -19,7 +19,6 @@
     margin-bottom: 30px;
   }
 }
-
 .imgSection {
   position: relative;
   width: 50%;
@@ -29,47 +28,15 @@
     width: 100%;
   }
 
-  .imgPict,
-  .imgVector,
   .imgPhoto {
-    display: block;
-    max-width: 100%;
-    height: auto;
-  }
-
-  .imgPict {
-    position: absolute;
-    top: 0;
-    left: 36px;
-    z-index: 1;
-    width: 100%;
-    @include respond-to(mobile) {
-      width: 600px;
-      left: 0;
-    }
-  }
-
-  .imgVector {
-    position: absolute;
-    top: 0;
-    left: 36px;
-    z-index: 2;
-    width: 100%;
-    @include respond-to(mobile) {
-      width: 600px;
-      height: auto;
-      left: 0;
-    }
-  }
-
-  .imgPhoto {
-    position: relative;
+    width: 100%; // адаптивная ширина
+    height: auto; // автоматическая высота = сохраняем пропорции
+    display: block; // убирает лишние отступы
     z-index: 3;
-    width: 100%;
+
     @include respond-to(mobile) {
-      width: 600px;
+      max-width: 100%; // не выходит за пределы экрана
       height: auto;
-      left: 0;
     }
   }
 }
