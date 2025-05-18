@@ -1,6 +1,6 @@
 import logoImg from './logo1.png';
 import mailIcon from './mail.svg';
-import manImg from './man.webp';
+import manImg from './man2.webp';
 import phoneIcon from './phone.svg';
 import phoneLightIcon from './phone-light.svg';
 import RectangImg from './Rectangle.webp';

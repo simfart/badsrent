@@ -3,7 +3,7 @@ import styles from './Faq.module.scss';
 import { FaqItem } from './faqItem/FaqItem';
 import { faqData } from 'entities/faqData/faqData';
 
-export const Faq: FC = () => {
+const Faq: FC = () => {
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
@@ -40,3 +40,5 @@ export const Faq: FC = () => {
     </section>
   );
 };
+
+export default Faq;

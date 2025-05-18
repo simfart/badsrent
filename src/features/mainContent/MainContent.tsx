@@ -1,8 +1,9 @@
-import { FC } from 'react';
+import { FC, lazy, Suspense } from 'react';
 import { AboutUs } from 'features/aboutUs/AboutUs';
-import { ProductList } from 'features/productList/ProductList';
 import styles from './MainContent.module.scss';
-import { Faq } from 'features/faq/Faq';
+
+const ProductList = lazy(() => import('features/productList/ProductList'));
+const Faq = lazy(() => import('features/faq/Faq'));
 
 export const MainContent: FC = () => {
   return (
@@ -22,12 +23,11 @@ export const MainContent: FC = () => {
         </ul>
         <div
           className={styles.mainDescr}
-          // itemProp="description"
-          // data-lcp-element="true"
-          // data-importance="high"
+          itemProp="description"
+          data-lcp-element="true"
+          data-importance="high"
         >
           <p>
-            {' '}
             Более 20 лет мы предоставляем в аренду медицинские функциональные
             кровати и средства реабилитации с доставкой по всему Крыму:
             Симферополь, Ялта, Севастополь, Евпатория и другие города.
@@ -38,8 +38,10 @@ export const MainContent: FC = () => {
       </section>
 
       <AboutUs />
-      <ProductList />
-      <Faq />
+      <Suspense fallback={null}>
+        <ProductList />
+        <Faq />
+      </Suspense>
     </main>
   );
 };

@@ -3,7 +3,7 @@ import { products } from 'entities/product/model/products';
 import { ProductGallery } from 'widgets/productGallery/ProductGallery';
 import styles from './ProductList.module.scss';
 
-export const ProductList: React.FC = () => (
+const ProductList: React.FC = () => (
   <section id="products" className={styles.products}>
     <span>Кровати, которые помогают заботиться</span>
     <h2>Решения для ухода</h2>
@@ -14,3 +14,5 @@ export const ProductList: React.FC = () => (
     </div>
   </section>
 );
+
+export default ProductList;
