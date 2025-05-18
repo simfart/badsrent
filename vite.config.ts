@@ -31,7 +31,7 @@ export default defineConfig({
       },
     }),
     ViteImageOptimizer({
-      exclude: ['**/*.svg'],
+      exclude: ['**/*.svg', '**/*.webp'],
       png: {
         quality: 70,
       },
@@ -43,6 +43,9 @@ export default defineConfig({
       },
       webp: {
         lossless: true,
+        quality: 100,
+        nearLossless: false,
+        smartSubsample: false,
       },
     }),
   ],

@@ -69,7 +69,7 @@ export async function render(pageContext: PageContextServer) {
         }
         </script>
         <link rel="canonical" href="https://arendamed82.ru" />
-        <meta property="og:title" content="Аренда медицинских кроватей для лежачих больных в Симферополе и Крыму" />
+        <meta property="og:title" content="Аренда медицинских кроватей в Симферополе и Крыму" />
         <meta property="og:description" content="Аренда медицинских кроватей для лежачих больных в Симферополе и Крыму. Комфортные кровати для реабилитации, низкие цены и быстрая доставка" />
         <meta property="og:image" content="https://arendamed82.ru/assets/images/logo1.svg" />
         <meta property="og:url" content="https://arendamed82.ru" />

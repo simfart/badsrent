@@ -11,26 +11,37 @@ export const AboutUs: FC = memo(() => {
       itemType="http://schema.org/Organization"
     >
       <div className={styles.aboutUsMain}>
-        <div className={styles.imgSection}>
+        <div
+          className={styles.imgSection}
+          itemProp="description"
+          data-lcp-element="true"
+          data-importance="high"
+        >
           <img
             className={styles.imgPict}
             src={RectangImg}
             alt=""
-            loading="lazy"
+            loading="eager"
+            fetchPriority="high"
+            width="600"
+            height="400"
           />
           <img
             className={styles.imgVector}
             src={vectorImg}
-            alt=""
-            loading="lazy"
+            loading="eager"
+            width="600"
+            height="400"
+            fetchPriority="high"
           />
           <img
             className={styles.imgPhoto}
             src={manImg}
             alt="Медицинская кровать"
+            loading="eager"
+            fetchPriority="high"
             width="600"
-            height="auto"
-            loading="lazy"
+            height="400"
           />
         </div>
 

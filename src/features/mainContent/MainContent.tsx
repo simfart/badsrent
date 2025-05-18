@@ -22,9 +22,9 @@ export const MainContent: FC = () => {
         </ul>
         <div
           className={styles.mainDescr}
-          itemProp="description"
-          data-lcp-element="true"
-          data-importance="high"
+          // itemProp="description"
+          // data-lcp-element="true"
+          // data-importance="high"
         >
           <p>
             {' '}
