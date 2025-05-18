@@ -1,5 +1,5 @@
 import { FC, memo } from 'react';
-import { manImg } from 'shared/assets/images';
+import { man2 } from 'shared/assets/images';
 import styles from './AboutUs.module.scss';
 
 export const AboutUs: FC = memo(() => {
@@ -14,10 +14,12 @@ export const AboutUs: FC = memo(() => {
         <div className={styles.imgSection}>
           <img
             className={styles.imgPhoto}
-            src={manImg}
+            src={man2}
             alt="Описание изображения"
             loading="eager"
-            fetchPriority="high"
+            itemProp="description"
+            data-lcp-element="true"
+            data-importance="high"
           />
         </div>
 

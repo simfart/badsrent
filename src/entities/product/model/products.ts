@@ -22,6 +22,9 @@ import {
   bed212Img,
   bedVid,
   poster,
+  wheelchair1Img,
+  wheelchair2Img,
+  wheelchair3Img,
 } from 'shared/assets/images';
 import { Product } from 'shared/assets/types/product';
 
@@ -169,6 +172,28 @@ export const products: Product[] = [
         src: bed212Img,
         altLabel:
           'Медицинские кровати для лежачих больных с функцией переворачивания',
+      },
+    ],
+  },
+  {
+    id: 3,
+    name: 'Инвалидное кресло-коляска стандартное',
+    price: '1 499 ₽ / мес',
+    media: [
+      {
+        type: 'image',
+        src: wheelchair1Img,
+        altLabel: 'Инвалидное кресло-коляска стандартное',
+      },
+      {
+        type: 'image',
+        src: wheelchair2Img,
+        altLabel: 'Инвалидное кресло-коляска стандартное',
+      },
+      {
+        type: 'image',
+        src: wheelchair3Img,
+        altLabel: 'Инвалидное кресло-коляска стандартное',
       },
     ],
   },
