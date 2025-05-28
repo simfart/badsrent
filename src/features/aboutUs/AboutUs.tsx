@@ -17,16 +17,16 @@ export const AboutUs: FC = memo(() => {
             src={man2}
             alt="Описание изображения"
             loading="eager"
-            itemProp="description"
-            data-lcp-element="true"
-            data-importance="high"
+            // itemProp="description"
+            // data-lcp-element="true"
+            // data-importance="high"
           />
         </div>
 
         <div className={styles.aboutUsContent}>
           <h2 itemProp="name">О нас</h2>
 
-          <p itemProp="description">
+          <p>
             Мы — команда, для которой забота о вашем здоровье и комфорте на
             первом месте. Наша компания специализируется на аренде медицинских
             кроватей и оборудования для домашнего ухода, помогая создать

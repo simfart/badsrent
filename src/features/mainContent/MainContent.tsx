@@ -1,9 +1,8 @@
-import { FC, lazy, Suspense } from 'react';
+import { FC } from 'react';
 import { AboutUs } from 'features/aboutUs/AboutUs';
 import styles from './MainContent.module.scss';
-
-const ProductList = lazy(() => import('features/productList/ProductList'));
-const Faq = lazy(() => import('features/faq/Faq'));
+import ProductList from 'features/productList/ProductList';
+import Faq from 'features/faq/Faq';
 
 export const MainContent: FC = () => {
   return (
@@ -23,9 +22,9 @@ export const MainContent: FC = () => {
         </ul>
         <div
           className={styles.mainDescr}
-          itemProp="description"
-          data-lcp-element="true"
-          data-importance="high"
+          // itemProp="description"
+          // data-lcp-element="true"
+          // data-importance="high"
         >
           <p>
             Более 20 лет мы предоставляем в аренду медицинские функциональные
@@ -38,10 +37,9 @@ export const MainContent: FC = () => {
       </section>
 
       <AboutUs />
-      <Suspense fallback={null}>
-        <ProductList />
-        <Faq />
-      </Suspense>
+
+      <ProductList />
+      <Faq />
     </main>
   );
 };
