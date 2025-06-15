@@ -53,7 +53,7 @@ export async function render(pageContext: PageContextServer) {
             "longitude": "34.102417"
           },
           "openingHours": "Mo-Su 09:00-21:00",
-          "image": "https://arendamed82.ru/assets/images/logo1.svg",
+          "image": "https://arendamed82.ru/favicon.svg",
           "sameAs": [
             "https://vk.com/arendamed82",
             "https://instagram.com/arendamed82"
@@ -71,13 +71,13 @@ export async function render(pageContext: PageContextServer) {
         <link rel="canonical" href="https://arendamed82.ru" />
         <meta property="og:title" content="Аренда медицинских кроватей в Симферополе и Крыму" />
         <meta property="og:description" content="Аренда медицинских кроватей для лежачих больных в Симферополе и Крыму. Комфортные кровати для реабилитации, низкие цены и быстрая доставка" />
-        <meta property="og:image" content="https://arendamed82.ru/assets/images/logo1.svg" />
+        <meta property="og:image" content="https://arendamed82.ru/favicon.svg" />
         <meta property="og:url" content="https://arendamed82.ru" />
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Аренда медицинских кроватей для лежачих больных в Симферополе и Крыму" />
         <meta name="twitter:description" content="Аренда медицинских кроватей для лежачих больных в Симферополе и Крыму. Комфортные кровати для реабилитации, низкие цены и быстрая доставка" />
-        <meta name="twitter:image" content="https://arendamed82.ru/assets/images/logo1.svg" />
+        <meta name="twitter:image" content="https://arendamed82.ru/favicon.svg" />
         <meta name="geo.region" content="RU-CR" />
         <meta name="geo.placename" content="Симферополь" />
         <meta name="format-detection" content="telephone=no" />
