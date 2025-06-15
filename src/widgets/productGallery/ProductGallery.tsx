@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { useSwipeable } from 'react-swipeable';
 import styles from './ProductGallery.module.scss';
 import { Product } from 'shared/assets/types/product';
+import { useSwipeNavigation } from 'shared/useSwipeNavigation';
 
 interface Props {
   product: Product;
@@ -31,11 +31,9 @@ export const ProductGallery: React.FC<Props> = ({ product }) => {
     );
   };
 
-  const swipeHandlers = useSwipeable({
-    onSwipedLeft: handleNext,
-    onSwipedRight: handlePrev,
-    trackMouse: true,
-    touchEventOptions: { passive: false },
+  const swipeHandlers = useSwipeNavigation({
+    onNext: handleNext,
+    onPrev: handlePrev,
   });
 
   if (!isHydrated) {

@@ -3,6 +3,7 @@ import styles from './ReviewCarousel.module.scss';
 import { reviews } from 'entities/reviews/reviews';
 import { getRelativeTime } from 'shared/getRelativeTime';
 import { Star } from 'shared/assets/Star';
+import { useSwipeNavigation } from 'shared/useSwipeNavigation';
 
 export const ReviewCarousel: FC = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -37,6 +38,11 @@ export const ReviewCarousel: FC = () => {
     </div>
   );
 
+  const swipeHandlers = useSwipeNavigation({
+    onNext: () => switchReview('next'),
+    onPrev: () => switchReview('prev'),
+  });
+
   return (
     <div className={styles.carousel}>
       <button
@@ -47,6 +53,7 @@ export const ReviewCarousel: FC = () => {
       </button>
 
       <div
+        {...swipeHandlers}
         className={`${styles.reviewCard} ${animating ? styles.fadeOutIn : ''}`}
       >
         {renderStars(review.rating)}
