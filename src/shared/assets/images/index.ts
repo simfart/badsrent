@@ -1,6 +1,5 @@
 import logoImg from './logo1.png';
 import mailIcon from './mail.svg';
-import manImg from './man2.webp';
 import phoneIcon from './phone.svg';
 import phoneLightIcon from './phone-light.svg';
 import RectangImg from './Rectangle.webp';
@@ -30,6 +29,7 @@ import bed29Img from './2.9.webp';
 import bed210Img from './2.10.webp';
 import bed211Img from './2.11.webp';
 import bed212Img from './2.12.webp';
+import bedVid2 from './2.13.mp4';
 
 import wheelchair1Img from './image0.jpeg';
 import wheelchair2Img from './image1.jpeg';
@@ -38,9 +38,9 @@ import wheelchair3Img from './image2.jpeg';
 import man2 from './Men2.webp';
 
 import poster from './video_poster.webp';
+import poster2 from './video_poster2.webp';
 
 export {
-  manImg,
   RectangImg,
   vectorImg,
   mailIcon,
@@ -75,4 +75,6 @@ export {
   wheelchair2Img,
   wheelchair3Img,
   man2,
+  poster2,
+  bedVid2,
 };
