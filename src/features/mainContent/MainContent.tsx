@@ -3,6 +3,7 @@ import { AboutUs } from 'features/aboutUs/AboutUs';
 import styles from './MainContent.module.scss';
 import ProductList from 'features/productList/ProductList';
 import Faq from 'features/faq/Faq';
+import { Review } from 'features/review/Review';
 
 export const MainContent: FC = () => {
   return (
@@ -20,12 +21,7 @@ export const MainContent: FC = () => {
           <li>Быстрая срочная доставка</li>
           <li>Оплата после получения кровати</li>
         </ul>
-        <div
-          className={styles.mainDescr}
-          // itemProp="description"
-          // data-lcp-element="true"
-          // data-importance="high"
-        >
+        <div className={styles.mainDescr}>
           <p>
             Более 20 лет мы предоставляем в аренду медицинские функциональные
             кровати и средства реабилитации с доставкой по всему Крыму:
@@ -35,11 +31,10 @@ export const MainContent: FC = () => {
           </p>
         </div>
       </section>
-
       <AboutUs />
-
       <ProductList />
       <Faq />
+      <Review />
     </main>
   );
 };
