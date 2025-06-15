@@ -6,11 +6,14 @@
   margin: 0 auto;
   position: relative;
   padding: 20px;
-  //   min-height: 364px;
+
+  @include respond-to(mobile) {
+    padding: 10px;
+    max-width: 100%;
+  }
 }
 
 .reviewCard {
-  //   border-radius: 12px;
   padding: 18px;
   text-align: center;
   width: 100%;
@@ -44,8 +47,13 @@
   justify-content: center;
   span {
     color: rgb(255, 255, 255);
-    font-size: 16px;
+    font-size: 18px;
     font-weight: bold;
+  }
+
+  @include respond-to(mobile) {
+    width: 42px;
+    height: 42px;
   }
 }
 .reviewerAbout {
@@ -55,7 +63,12 @@
   margin-left: 16px;
   color: $color-text-secondary;
   font-size: 16px;
-  line-height: 22px;
+  line-height: 140%;
+
+  @include respond-to(mobile) {
+    margin-left: 10px;
+    font-size: 14px;
+  }
 }
 
 .name {
@@ -63,7 +76,6 @@
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
-  //   max-width: 100%;
 }
 
 .arrow {
@@ -76,17 +88,15 @@
   transform: translateY(-50%);
   color: $color-primary;
   transition: transform 0.15s ease, opacity 0.2s ease;
-
-  // немного прозрачности по умолчанию
   opacity: 0.8;
 
   &:hover {
-    opacity: 1; // ярче при наведении
-    transform: translateY(-50%) scale(1.1); // немного увеличивается
+    opacity: 1;
+    transform: translateY(-50%) scale(1.1);
   }
 
   &:active {
-    transform: translateY(-50%) scale(0.9); // эффект нажатия
+    transform: translateY(-50%) scale(0.9);
   }
 
   &.left {
@@ -95,6 +105,20 @@
 
   &.right {
     right: -10px;
+  }
+
+  @include respond-to(mobile) {
+    font-size: 18px;
+
+    &.left {
+      left: -2px;
+      padding: 0;
+    }
+
+    &.right {
+      right: -2px;
+      padding: 0;
+    }
   }
 }
 

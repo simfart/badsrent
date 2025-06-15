@@ -24,7 +24,7 @@ export const ReviewCarousel: FC = () => {
           : prev + 1,
       );
       setAnimating(false);
-    }, 300); // должно совпадать с CSS-анимацией
+    }, 300);
   };
 
   const review = reviews[currentIndex];
