@@ -23,13 +23,15 @@ export const FeedbackPopup = () => {
 
   return (
     <>
-      <button
-        className={styles.popupButton}
-        onClick={() => setOpen(true)}
-        aria-label="Обратная связь"
-      >
-        <MessageSquare size={20} />
-      </button>
+      {!open && (
+        <button
+          className={styles.popupButton}
+          onClick={() => setOpen(true)}
+          aria-label="Обратная связь"
+        >
+          <MessageSquare size={20} />
+        </button>
+      )}
 
       {open && (
         <div className={styles.overlay}>

@@ -41,3 +41,45 @@
   color: #666;
   cursor: pointer;
 }
+
+.recaptcha {
+  display: flex;
+  justify-content: center;
+  margin: 10px 0;
+  
+  // Адаптивные стили для капчи
+  > div {
+    transform-origin: center;
+    transform: scale(1);
+    
+    @media (max-width: 480px) {
+      transform: scale(0.9);
+    }
+    
+    @media (max-width: 400px) {
+      transform: scale(0.85);
+    }
+    
+    @media (max-width: 360px) {
+      transform: scale(0.8);
+    }
+    
+    @media (max-width: 320px) {
+      transform: scale(0.75);
+    }
+  }
+}
+
+// Дополнительные стили для формы на маленьких экранах
+@media (max-width: 480px) {
+  .popupContent {
+    padding: 20px;
+    max-width: 95%;
+  }
+}
+
+@media (max-width: 360px) {
+  .popupContent {
+    padding: 16px;
+  }
+}

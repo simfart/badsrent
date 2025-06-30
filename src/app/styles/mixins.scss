@@ -19,3 +19,23 @@
     }
   }
 }
+
+@mixin respond-to-up($breakpoint) {
+  @if $breakpoint == mobile {
+    @media (min-width: $mobile-breakpoint) {
+      @content;
+    }
+  } @else if $breakpoint == tablet {
+    @media (min-width: $tablet-breakpoint) {
+      @content;
+    }
+  } @else if $breakpoint == desktop {
+    @media (min-width: $desktop-breakpoint) {
+      @content;
+    }
+  } @else if $breakpoint == midDesktop {
+    @media (min-width: $mid-desktop-breakpoint) {
+      @content;
+    }
+  }
+}

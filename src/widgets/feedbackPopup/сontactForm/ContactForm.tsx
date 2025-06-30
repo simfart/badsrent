@@ -1,9 +1,8 @@
 import React, { useRef, useState, useEffect } from 'react';
 import emailjs from '@emailjs/browser';
 import ReCAPTCHA from 'react-google-recaptcha';
-
 import styles from './ContactForm.module.scss'; 
-
+import { PrivacyPolicyPopup } from '../../../shared/privacyPolicy/PrivacyPolicy';
 
 export const ContactForm: React.FC = () => {
   const formRef = useRef<HTMLFormElement | null>(null);
@@ -15,6 +14,7 @@ export const ContactForm: React.FC = () => {
 
   const RECAPTCHA_SITE_KEY = '6Lddz2krAAAAAD7xedwpJ75pa2ltnt8Wz-kQGb3z';
   const [captchaToken, setCaptchaToken] = useState<string | null>(null);
+  const [isPrivacyOpen, setPrivacyOpen] = useState(false);
 
   useEffect(() => {
     emailjs.init('vh3BcaTr0pMZI7IpD');
@@ -61,58 +61,61 @@ export const ContactForm: React.FC = () => {
   };
 
   return (
-    <form ref={formRef} onSubmit={sendEmail} className={styles.form}>
-      <input
-        ref={nameRef}
-        type="text"
-        name="name"
-        placeholder="Ваше имя"
-        required
-      />
-      <input type="email" name="email" placeholder="Ваш email" required />
-      <input
-        type="tel"
-        name="phone"
-        placeholder="+7 (999) 999-99-99"
-        pattern="\+7\s?\(?[0-9]{3}\)?\s?[0-9]{3}-?[0-9]{2}-?[0-9]{2}"
-        title="Формат: +7 (999) 999-99-99"
-        required
-      />
-
-      <textarea name="message" placeholder="Сообщение" required />
-
-      <label className={styles.consent}>
+    <>
+      <form ref={formRef} onSubmit={sendEmail} className={styles.form}>
         <input
-          type="checkbox"
-          checked={consent}
-          onChange={(e) => setConsent(e.target.checked)}
+          ref={nameRef}
+          type="text"
+          name="name"
+          placeholder="Ваше имя"
+          required
         />
-        Я даю согласие на обработку персональных данных. Подробнее в{' '}
-        {/* <Link to="/privacy-policy" target="_blank">
-          Политике конфиденциальности
-        </Link> */}
-        .
-      </label>
-      <ReCAPTCHA
-        sitekey={RECAPTCHA_SITE_KEY}
-        onChange={(token: string | null) => setCaptchaToken(token)}
-        onExpired={() => setCaptchaToken(null)}
-        className={styles.recaptcha}
-      />
-      <input
-        type="hidden"
-        name="g-recaptcha-response"
-        value={captchaToken || ''}
-      />
-      <button type="submit" disabled={loading}>
-        {loading ? 'Отправка...' : 'Отправить'}
-      </button>
+        <input type="email" name="email" placeholder="Ваш email" required />
+        <input
+          type="tel"
+          name="phone"
+          placeholder="+7 (999) 999-99-99"
+          pattern="\+7\s?\(?[0-9]{3}\)?\s?[0-9]{3}-?[0-9]{2}-?[0-9]{2}"
+          title="Формат: +7 (999) 999-99-99"
+          required
+        />
 
-      {status && (
-        <p className={status.startsWith('✅') ? styles.success : styles.error}>
-          {status}
-        </p>
-      )}
-    </form>
+        <textarea name="message" placeholder="Сообщение" required />
+
+        <label className={styles.consent}>
+          <input
+            type="checkbox"
+            checked={consent}
+            onChange={(e) => setConsent(e.target.checked)}
+          />
+          Я даю согласие на обработку персональных данных. Подробнее в{' '}
+          <span style={{ color: '#007bff', cursor: 'pointer', textDecoration: 'underline' }} onClick={() => setPrivacyOpen(true)}>
+            Политике конфиденциальности
+          </span>
+          .
+        </label>
+        <ReCAPTCHA
+          sitekey={RECAPTCHA_SITE_KEY}
+          onChange={(token: string | null) => setCaptchaToken(token)}
+          onExpired={() => setCaptchaToken(null)}
+          className={styles.recaptcha}
+        />
+        <input
+          type="hidden"
+          name="g-recaptcha-response"
+          value={captchaToken || ''}
+        />
+        <button type="submit" disabled={loading}>
+          {loading ? 'Отправка...' : 'Отправить'}
+        </button>
+
+        {status && (
+          <p className={status.startsWith('✅') ? styles.success : styles.error}>
+            {status}
+          </p>
+        )}
+      </form>
+      <PrivacyPolicyPopup open={isPrivacyOpen} onClose={() => setPrivacyOpen(false)} />
+    </>
   );
 };
