@@ -11,10 +11,31 @@ interface Props {
 export const ProductGallery: React.FC<Props> = ({ product }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isHydrated, setIsHydrated] = useState(false);
+  const [showSwipeIndicator, setShowSwipeIndicator] = useState(true);
 
   useEffect(() => {
     setIsHydrated(true);
+    
+    // Скрываем индикатор свайпа через 3 секунды
+    const timer = setTimeout(() => {
+      setShowSwipeIndicator(false);
+    }, 3000);
+
+    return () => clearTimeout(timer);
   }, []);
+
+  // Показываем индикатор только на первой картинке
+  useEffect(() => {
+    if (isHydrated && currentIndex === 0) {
+      setShowSwipeIndicator(true);
+      const timer = setTimeout(() => {
+        setShowSwipeIndicator(false);
+      }, 3000);
+      return () => clearTimeout(timer);
+    } else {
+      setShowSwipeIndicator(false);
+    }
+  }, [currentIndex, isHydrated]);
 
   const currentMedia = product.media[currentIndex];
 
@@ -110,6 +131,15 @@ export const ProductGallery: React.FC<Props> = ({ product }) => {
               className={styles.mainMedia}
               poster={currentMedia.poster || currentMedia.src}
             />
+          )}
+          
+          {/* Индикатор свайпа - только на первой картинке */}
+          {showSwipeIndicator && currentIndex === 0 && (
+            <div className={styles.swipeIndicator}>
+              <div className={styles.swipeArrow}>←</div>
+              <span>Свайпните для навигации</span>
+              <div className={styles.swipeArrow}>→</div>
+            </div>
           )}
         </div>
 
