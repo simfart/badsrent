@@ -72,6 +72,7 @@
     margin-top: 0;
     color: #252b42;
     margin-bottom: 20px;
+    margin-top: 20px;
     @include respond-to(tablet) {
       font-size: 24px;
     }
@@ -151,7 +152,7 @@
 }
 
 .helpBlock {
-  margin-top: 48px;
+  // margin-top: 48px;
   padding: 32px;
   border-radius: 18px;
   background: linear-gradient(
